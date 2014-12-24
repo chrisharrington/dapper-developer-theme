@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 
-<?php
-    $template_directory = get_bloginfo('template_directory');
-?>
-
 <html>
     <head>
-        <link type="text/css" rel="stylesheet" href="<?php echo($template_directory . '/style/grid.css'); ?>" />
-        <link type="text/css" rel="stylesheet" href="<?php echo($template_directory . '/style/application.css'); ?>" />
+        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400,700" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1><?php echo get_bloginfo('name'); ?></h1>
-                    <h5><?php echo get_bloginfo('description'); ?></h5>
+        <div class="container-fluid header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-push-8">
+                        <div>
+                            <i class="fa fa-twitter"></i>
+                        </div>    
+                    </div>
+                    <div class="col-sm-8 col-sm-pull-4">
+                        <h1><?php echo get_bloginfo('name'); ?></h1>
+                        <h5><?php echo get_bloginfo('description'); ?></h5>
+                    </div>
                 </div>
             </div>
-
+        </div>
+        
+        <div class="container">
             <div class="row">
                 <div class="col-sm-9">
                     the article
