@@ -3046,19 +3046,36 @@ div.header i {
 div.header i:hover {
   color: #669ddb;
 }
-div.post {
+div.posts {
+  margin-top: 15px;
+}
+div.posts div.post {
   padding-bottom: 28px;
   border-bottom: solid 1px #DDD;
   margin-bottom: 15px;
 }
-div.post div.info {
+div.posts div.post div.info {
   color: #909090;
   font-size: 12px;
 }
-div.post div.info > span.tags {
-  margin-left: 30px;
+div.posts div.post div.info div.tags,
+div.posts div.post div.info div.comments {
+  margin-left: 15px;
 }
-div.post p {
+div.posts div.post div.info div.tags i,
+div.posts div.post div.info div.comments i {
+  margin-right: 5px;
+}
+div.posts div.post div.info div.tags a,
+div.posts div.post div.info div.comments a {
+  text-transform: lowercase;
+}
+div.posts div.post p {
   color: #555;
   margin-top: 15px;
+}
+div.posts div.post pre {
+  background: #F0F0F0;
+  padding: 10px;
+  font-size: 0.875em;
 }

@@ -23,9 +23,16 @@ div.header { .gradient(#333, #111); padding-top:10px; padding-bottom:10px;
     }
 }
 
-div.post { padding-bottom:28px; border-bottom:solid 1px #DDD; margin-bottom:15px;
-    div.info { color:#909090; font-size:12px;
-        >span.tags { margin-left:30px; }
+div.posts { margin-top:15px;
+    div.post { padding-bottom:28px; border-bottom:solid 1px #DDD; margin-bottom:15px;
+        div.info { color:#909090; font-size:12px;
+            div.tags, div.comments { margin-left:15px;
+                i { margin-right:5px; }
+                a { text-transform:lowercase; }
+            }
+        }
+        p { color:#555; margin-top:15px; }
+
+        pre { background:#F0F0F0; padding:10px; font-size:0.875em; }
     }
-    p { color:#555; margin-top:15px; }
 }

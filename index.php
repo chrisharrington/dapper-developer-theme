@@ -30,7 +30,7 @@
             </div>
         </div>
         
-        <div class="container">
+        <div class="container posts">
             <div class="row">
                 <div class="col-sm-9">
                     <?php
@@ -39,23 +39,35 @@
                             the_post(); ?>
 
                             <div class="post">
-                                <div class="row">
+                                <div class="row info">
                                     <div class="col-sm-6">
-                                        By <?php the_author(); ?> on <?php the_date(); ?>
+                                        Posted on <?php the_date(); ?> by <?php the_author(); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <?php the_tags('<i class="fa fa-tags"></i>'); ?>
+                                        <div class="pull-right">
+                                            <div class="comments pull-left">
+                                                <i class="fa fa-comment"></i>
+                                                <span><?php echo get_comments_number(); ?></span>
+                                            </div>
+                                            <?php
+                                            $tags = get_the_tags();
+                                            if ($tags) {
+                                                $html = "<div class='tags pull-left'><i class='fa fa-tags'></i>";
+                                                foreach (get_the_tags() as $tag) {
+                                                    $tag_link = get_tag_link($tag->term_id);
+                                                    $html .= "<a href='{$tag_link}'>";
+                                                    $html .= "{$tag->name}</a>, ";
+                                                }
+                                                $html = substr($html, 0, strlen($html)-2);
+                                                $html .= '</div>';
+                                                echo $html;
+                                            }
+                                            ?>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="info">
-                                    
-                                    <span class="tags">
-                                        
-                                    </span>
                                 </div>
                                 <h2><?php the_title(); ?></h2>
-                                <?php the_excerpt(); ?>
+                                <?php the_content("Continue reading <i class='fa fa-long-arrow-right'></i>"); ?>
                             </div>
                     
                         <?php }
