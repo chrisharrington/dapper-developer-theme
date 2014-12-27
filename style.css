@@ -2738,6 +2738,15 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
 .pull-right {
   float: right !important;
 }
@@ -3021,6 +3030,9 @@ body {
   padding: 0;
   margin: 0;
 }
+a {
+  cursor: pointer;
+}
 div.header {
   background-color: #333333;
   background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#111111));
@@ -3030,6 +3042,9 @@ div.header {
   background: -o-linear-gradient(top, #333333, #111111);
   padding-top: 10px;
   padding-bottom: 10px;
+}
+div.header a.logo:hover {
+  text-decoration: none !important;
 }
 div.header h1,
 div.header i {
@@ -3054,6 +3069,24 @@ div.posts div.post {
   border-bottom: solid 1px #DDD;
   margin-bottom: 15px;
 }
+div.posts div.post h1 {
+  line-height: 49px;
+  color: #276cba;
+  font-family: "Roboto Condensed";
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-top: 8px;
+}
+div.posts div.post h2 {
+  font-size: 28px;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+div.posts div.post h5 {
+  color: #999999;
+  font-weight: normal;
+}
 div.posts div.post div.info {
   color: #909090;
   font-size: 12px;
@@ -3072,10 +3105,24 @@ div.posts div.post div.info div.comments a {
 }
 div.posts div.post p {
   color: #555;
-  margin-top: 15px;
+  margin: 15px 0;
 }
 div.posts div.post pre {
   background: #F0F0F0;
   padding: 10px;
   font-size: 0.875em;
+}
+ul.pages {
+  list-style-type: none;
+  color: #cccccc;
+}
+ul.pages li {
+  display: inline;
+}
+ul.pages li a {
+  padding: 5px 0;
+  color: inherit;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  margin-left: 25px;
 }
