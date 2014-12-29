@@ -54,7 +54,7 @@
         
         <div class="container posts">
             <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-<?php echo (get_post_type() == 'page' ? '12' : '9'); ?>">
                     <?php
                     if (have_posts()) {
                         while (have_posts()) {
@@ -63,12 +63,12 @@
                             <div class="post">
                                 <?php if (get_post_type() == "post"): ?>
                                 <div class="row info">
-                                    <div class="col-sm-6">
+                                    <div class="col-md-6">
                                         Posted on <?php the_date(); ?> by <?php the_author(); ?>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="pull-right">
-                                            <div class="comments pull-left">
+                                    <div class="col-md-6">
+                                        <div class="pull-right-md spacing-top-0-md spacing-top-5">
+                                            <div class="comments pull-left hidden">
                                                 <i class="fa fa-comment"></i>
                                                 <span><?php echo get_comments_number(); ?></span>
                                             </div>
@@ -100,14 +100,23 @@
                     ?>
                 </div>
                 
-                <div class="col-sm-3">
-                    the aside
+                <div class="<?php echo get_post_type() == 'page' ? 'hidden' : 'col-sm-3'; ?>">
+                    <div class="tags padding-15 small-font lower-case box-sizing pull-left full-width">
+                        <h3 class="spacing-bottom-10 upper-case">Tags</h3>
+                        <?php
+                            $html = "";
+                            foreach (get_tags('orderby=count&order=DESC') as $tag) {
+                                $html .= '<a href="?tag=' . $tag->slug .'" class="hover wide-padding-5 pull-left full-width"><span class="pull-left">' . $tag->name . '</span><span class="pull-right">' . $tag->count . '</span></a><br />';
+                            }
+                            echo $html;
+                        ?>
+                    </div>
                 </div>
             </div>
             
-            <div class="row">
+            <div class="row spacing-top-15">
                 <div class="col-sm-12">
-                    the footer
+                    
                 </div>
             </div>
         </div>

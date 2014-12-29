@@ -4,10 +4,14 @@
 h1, h2, h3, h4, h5, h6 { margin:0; padding:0; }
 
 h1, h2 { line-height:49px; color:@dark-header-colour; font-family:"Roboto Condensed"; letter-spacing:-1px; text-transform:uppercase; font-size:35px; }
-h2 { font-size:28px; letter-spacing:0px; text-transform:none; }
+h2 { font-size:28px; letter-spacing:0px; text-transform:none; color:black; }
 h5 { color:@dark-subheader-colour; font-weight:normal; }
+p:last-child { margin-bottom:0 !important; }
+button { .gradient(@dark-header-colour, @light-header-colour); color:white; padding:5px 20px; border:none; .box-shadow(0 2px 8px rgba(100, 100, 100, 0.4)); font-size:14px; outline:none !important; .border-radius(3px);
+    &:active { .box-shadow(none); }
+}
 
-p { margin:0; }
+.hover:hover { background:#F0F0F0; }
 
 @media (min-width: 768px) {
   h1 { font-size:42px; }
@@ -26,16 +30,17 @@ div.header { .gradient(#333, #111); padding-top:10px; padding-bottom:10px;
 }
 
 div.posts { margin-top:15px;
-    div.post { padding-bottom:28px; border-bottom:solid 1px #DDD; margin-bottom:15px;
+    div.post { padding-bottom:15px; border-bottom:solid 1px #DDD; margin-bottom:15px;
         h1 { line-height:49px; color:@dark-header-colour; font-family:"Roboto Condensed"; letter-spacing:-1px; text-transform:uppercase; font-size:36px; margin-top:8px; }
         h2 { font-size:28px; letter-spacing:0px; text-transform:none; }
         h5 { color:@dark-subheader-colour; font-weight:normal; }
         
         div.info { color:#909090; font-size:12px;
-            div.tags, div.comments { margin-left:15px;
+            div.tags, div.comments {
                 i { margin-right:5px; }
                 a { text-transform:lowercase; }
             }
+            div.tags { margin-left:15px; }
         }
         
         p { color:#555; margin:15px 0; }
@@ -43,6 +48,15 @@ div.posts { margin-top:15px;
         pre { background:#F0F0F0; padding:10px; font-size:0.875em; }
     }
 }
+
+div.add-comment {
+    .avatar { .border-radius(3px); width:44px; height:44px; }
+    .name { font-weight:bold; color:black; padding-left:5px; }
+    .email { color:#999; font-size:0.75em; padding-left:5px; }
+    textarea, input { border:solid 1px #CCC; width:100%; }
+    textarea { height:100px; }
+}
+
 
 ul.pages { list-style-type:none; color:@light-subheader-colour;
     li { display:inline;
