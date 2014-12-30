@@ -4,6 +4,8 @@
     <head>
         <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400,700" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
+        
+        <script src="<?php bloginfo('template_url'); ?>/script/app.js"></script>
     </head>
     <body>
         <div class="container-fluid header">
@@ -111,6 +113,7 @@
                             echo $html;
                         ?>
                     </div>
+                    <div id="github"></div>
                 </div>
             </div>
             

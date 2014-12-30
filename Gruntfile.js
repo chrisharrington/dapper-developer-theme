@@ -2,27 +2,16 @@ module.exports = function(grunt) {
     require("jit-grunt")(grunt);
 
     grunt.initConfig({
-        bowercopy: {
-            options: {
-                srcPrefix: "bower_components"
+        browserify: {
+            options:      {
+                transform: [require("grunt-react").browserify]
             },
-            scripts: {
-                options: {
-                    destPrefix: "script/vendor"
-                },
-                files: {
-                    "require.js": "require/build/require.js",
-                    "github-api.js": "github-api/github.js"
-                }
+            app: {
+                src: ["script/vendor/**/*.js", "script/app/**/*.js", "script/app/**/*.jsx"],
+                dest: "script/app.js"
             }
-        },
+        },     
         
-        concat: {
-            dist: {
-                src: ["script/vendor/**/*.js", "script/app/**/*.js"],
-                dest: "app.js"
-            }
-        },
         less: {
             development: {
                files: {
@@ -32,8 +21,8 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ["script/app/**/*.js"],
-                tasks: ["concat"],
+                files: ["script/app/**/*.js", "script/app/**/*.jsx"],
+                tasks: ["browserify"],
                 options: {
                     spawn: false
                 }
@@ -48,6 +37,8 @@ module.exports = function(grunt) {
             }
         }
     });
+    
+    grunt.loadNpmTasks("grunt-browserify");
 
-    grunt.registerTask("default", ["bowercopy", "concat", "less", "watch"]);
+    grunt.registerTask("default", ["browserify", "less", "watch"]);
 };
