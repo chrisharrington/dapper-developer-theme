@@ -2987,10 +2987,10 @@ hr {
   }
 }
 
-.border {
-  border: solid 1px #EEE;
-}
 
+.spacing-top-3 {
+  margin-top: 3px;
+}
 .spacing-top-5 {
   margin-top: 5px;
 }
@@ -3002,6 +3002,9 @@ hr {
 }
 .spacing-bottom-10 {
   margin-bottom: 10px;
+}
+.spacing-left-3 {
+  margin-left: 3px;
 }
 .padding-2 {
   padding: 2px;
@@ -3066,9 +3069,6 @@ hr {
 }
 
 
-.border {
-  border: solid 1px #EEE;
-}
 h1,
 h2,
 h3,
@@ -3143,6 +3143,12 @@ body {
 }
 a {
   cursor: pointer;
+}
+.border {
+  border: solid 1px #EEE;
+}
+.light {
+  color: #AAA;
 }
 div.header {
   background-color: #333333;

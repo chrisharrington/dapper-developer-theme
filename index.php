@@ -108,7 +108,7 @@
                         <?php
                             $html = "";
                             foreach (get_tags('orderby=count&order=DESC') as $tag) {
-                                $html .= '<a href="?tag=' . $tag->slug .'" class="hover wide-padding-5 pull-left full-width"><span class="pull-left">' . $tag->name . '</span><span class="pull-right">' . $tag->count . '</span></a><br />';
+                                $html .= '<a href="?tag=' . $tag->slug .'" class="hover wide-padding-5 pull-left full-width"><span class="pull-left">' . $tag->name . '</span><span class="pull-right light">' . $tag->count . '</span></a><br />';
                             }
                             echo $html;
                         ?>
