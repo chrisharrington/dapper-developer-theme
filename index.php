@@ -114,6 +114,7 @@
                         ?>
                     </div>
                     <div id="github"></div>
+                    <div id="twitter"></div>
                 </div>
             </div>
             
