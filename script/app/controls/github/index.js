@@ -11,9 +11,9 @@ module.exports = function(token) {
     this._token = token;
     
     this.repos = function() {
-        return qwest.get(API_LOCATION + "user/repos", null, {
+        return qwest.get(API_LOCATION + "users/chrisharrington/repos", null, {
             headers: {
-                "Authorization": "token " + this._token
+                //"Authorization": "token " + this._token
             }
         }).then(function() {
             return sorter.repos(JSON.parse(this.responseText));
