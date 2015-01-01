@@ -3018,6 +3018,12 @@ hr {
 .wide-padding-5 {
   padding: 5px 10px;
 }
+.padding-top-5 {
+  padding-top: 5px;
+}
+.padding-bottom-5 {
+  padding-bottom: 5px;
+}
 .pull-right-sm,
 .pull-right-md {
   float: none;
@@ -3127,6 +3133,10 @@ button:active {
   -moz-box-shadow: none;
   box-shadow: none;
 }
+.hover-link:hover {
+  background: #F0F0F0;
+  text-decoration: none;
+}
 .hover:hover {
   background: #F0F0F0;
 }
@@ -3150,8 +3160,14 @@ a {
 .light {
   color: #AAA;
 }
+.bold {
+  font-weight: bold;
+}
 .small {
   font-size: 0.875em;
+}
+.block {
+  display: block;
 }
 div.header {
   background-color: #333333;
@@ -3218,9 +3234,6 @@ div.posts div.post div.info div.comments i {
 div.posts div.post div.info div.tags a,
 div.posts div.post div.info div.comments a {
   text-transform: lowercase;
-}
-div.posts div.post div.info div.tags {
-  margin-left: 15px;
 }
 div.posts div.post p {
   color: #555;

@@ -11,6 +11,7 @@ button { .gradient(@dark-header-colour, @light-header-colour); color:white; padd
     &:active { .box-shadow(none); }
 }
 
+.hover-link:hover { background:#F0F0F0; text-decoration:none; }
 .hover:hover { background:#F0F0F0; }
 
 @media (min-width: 768px) {
@@ -22,7 +23,9 @@ a { cursor:pointer; }
 
 .border { border:solid 1px #EEE; }
 .light { color:#AAA; }
+.bold { font-weight:bold; }
 .small { font-size:0.875em; }
+.block { display:block; }
 
 div.header { .gradient(#333, #111); padding-top:10px; padding-bottom:10px;
     a.logo:hover { text-decoration:none !important; }
@@ -44,7 +47,6 @@ div.posts { margin-top:15px;
                 i { margin-right:5px; }
                 a { text-transform:lowercase; }
             }
-            div.tags { margin-left:15px; }
         }
         
         p { color:#555; margin:15px 0; }
