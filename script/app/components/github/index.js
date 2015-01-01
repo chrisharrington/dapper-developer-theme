@@ -1,6 +1,5 @@
 var React = require("react"),
     GitHub = require("../../controls/github"),
-    //GitHub = require("github-api"),
     _ = require("underscore"),
     config = require("../../config"),
     moment = require("moment");
@@ -13,7 +12,7 @@ module.exports = React.createClass({
     },
     
     componentWillMount: function() {
-        var github = new GitHub(config.githubApiKey);
+        var github = new GitHub(config.serviceLocation);
         github.repos().then(function(repos) {
             this.setState({ repos: repos });
         }.bind(this));
