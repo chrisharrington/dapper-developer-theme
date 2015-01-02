@@ -16,7 +16,12 @@
     "url": "https://github.com/chrisharrington/dapper-developer-theme/issues"
   },
   "homepage": "https://github.com/chrisharrington/dapper-developer-theme",
-  "devDependencies": {
+  "dependencies": {
+    "github-api": "^0.10.3",
+    "react": "^0.12.2",
+    "underscore": "^1.7.0",
+    "moment": "^2.8.4",
+    "qwest": "^1.5.1",
     "browserify": "^8.0.3",
     "grunt": "~0.4.5",
     "grunt-browserify": "^3.2.1",
@@ -25,12 +30,5 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-react": "^0.10.0",
     "jit-grunt": "~0.7.0"
-  },
-  "dependencies": {
-    "github-api": "^0.10.3",
-    "react": "^0.12.2",
-    "underscore": "^1.7.0",
-    "moment": "^2.8.4",
-    "qwest": "^1.5.1"
   }
 }
