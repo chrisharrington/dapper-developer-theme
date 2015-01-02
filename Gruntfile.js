@@ -15,6 +15,14 @@ module.exports = function(grunt) {
             }
         },
         
+        uglify: {
+            target: {
+                files: {
+                    "script/app.js": ["script/app.js"]
+                }
+            }
+        },
+        
         less: {
             development: {
                files: {
@@ -22,6 +30,7 @@ module.exports = function(grunt) {
                 }
             }
         },
+        
         watch: {
             scripts: {
                 files: ["script/app/**/*.js", "script/app/**/*.jsx"],
@@ -41,7 +50,6 @@ module.exports = function(grunt) {
         }
     });
     
-    grunt.loadNpmTasks("grunt-browserify");
-
-    grunt.registerTask("default", ["browserify", "less", "watch"]);
+    grunt.registerTask("watch", ["browserify", "less", "watch"]);
+    grunt.registerTask("prod", ["browserify", "uglify", "less"]);
 };
