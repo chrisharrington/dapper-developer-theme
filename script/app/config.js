@@ -1,3 +1,3 @@
 module.exports = {
-    serviceLocation: "http://54.200.254.103:8082/"
+    serviceLocation: "http://http://130.211.172.19:8081/"
 };
