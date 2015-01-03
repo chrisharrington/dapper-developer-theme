@@ -106,7 +106,7 @@
                 </div>
                 
                 <div class="<?php echo get_post_type() == 'page' ? 'hidden' : 'col-md-3'; ?>">
-                    <div class="tags padding-15 lower-case box-sizing pull-left full-width">
+                    <div class="tags padding-15 lower-case box-sizing pull-left full-width small-font">
                         <h3 class="spacing-bottom-10 upper-case">Tags</h3>
                         <?php
                             $html = "";

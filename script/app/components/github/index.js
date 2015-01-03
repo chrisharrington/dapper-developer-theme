@@ -54,7 +54,7 @@ module.exports = React.createClass({
     },
     
     render: function() {
-        return <div className="github padding-15 box-sizing pull-left full-width">
+        return <div className="github padding-15 box-sizing pull-left full-width small-font">
             <h3 className="upper-case spacing-bottom-10">GitHub</h3>
             {this.renderRepos(0, 5)}
             <div className={"more " + (this.state.moreVisible ? "" : "hidden")}>
