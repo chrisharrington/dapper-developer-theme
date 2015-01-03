@@ -8,6 +8,12 @@
         <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400,700" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
         
+        <script>
+            var wordpress = {
+                postType: "<?php echo get_post_type() ?>",
+                tags: JSON.parse('<? echo json_encode(get_tags('orderby=count&order=DESC')) ?>')
+            };
+        </script>
         <script src="<?php bloginfo('template_url'); ?>/script/app.js"></script>
     </head>
     <body>
@@ -106,7 +112,7 @@
                 </div>
                 
                 <div class="<?php echo get_post_type() == 'page' ? 'hidden' : 'col-md-3'; ?>">
-                    <div class="tags padding-15 lower-case box-sizing pull-left full-width small-font">
+                    <div class="hidden tags padding-15 lower-case box-sizing pull-left full-width small-font">
                         <h3 class="spacing-bottom-10 upper-case">Tags</h3>
                         <?php
                             $html = "";
@@ -116,6 +122,7 @@
                             echo $html;
                         ?>
                     </div>
+                    <div id="tags" class="lower-case"></div>
                     <div id="github"></div>
                     <div id="twitter"></div>
                 </div>

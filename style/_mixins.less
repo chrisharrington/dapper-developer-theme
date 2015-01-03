@@ -87,6 +87,14 @@
 	-ms-animation:     @name @duration @delay @ease;
 }
 
+.transition(@transition, @duration, @timingFunction: ease-in-out ) when (@transition = transform) {
+    -webkit-transition: -webkit-transform @duration @timingFunction;
+    -moz-transition: -moz-transform @duration @timingFunction;
+    -ms-transition: -ms-transform @duration @timingFunction;
+    -o-transition: -o-transform @duration @timingFunction;
+    transition: transform @duration @timingFunction;
+}
+
 .transition (@transition) {
 	-webkit-transition: @transition;  
 	-moz-transition:    @transition;
@@ -116,7 +124,7 @@
 }
 
 .skew (@deg, @deg2) {
-	-webkit-transform:       skew(@deg, @deg2);
+	-webkit-transform:   skew(@deg, @deg2);
 	-moz-transform: 	 skew(@deg, @deg2);
 	-ms-transform: 		 skew(@deg, @deg2);
 	-o-transform: 		 skew(@deg, @deg2);

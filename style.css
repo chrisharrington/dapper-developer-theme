@@ -3118,6 +3118,10 @@ h2 {
   letter-spacing: -1px;
   text-transform: uppercase;
 }
+div.post h1 {
+  line-height: 28px;
+  font-size: 24px;
+}
 h2 {
   font-size: 20px;
   letter-spacing: 0px;
@@ -3245,8 +3249,6 @@ div.posts div.post {
   margin-bottom: 15px;
 }
 div.posts div.post h1 {
-  line-height: 28px;
-  font-size: 24px;
   color: #276cba;
   font-family: "Roboto Condensed";
   letter-spacing: -1px;
