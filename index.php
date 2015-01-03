@@ -2,6 +2,9 @@
 
 <html>
     <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:400,700" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
         
@@ -11,16 +14,16 @@
         <div class="container-fluid header">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-md-8">
                         <a href="index.php" class="logo">
                             <h1><?php echo get_bloginfo('name'); ?></h1>
                             <h5><?php echo get_bloginfo('description'); ?></h5>
                         </a>
                     </div>
-                    <div class="col-sm-4 visible-sm visible-md visible-lg">
+                    <div class="col-md-4 visible-sm visible-md visible-lg">
                         <div class="pull-right">
                             <div class="row">
-                                <div class="col-sm-12 text-right">
+                                <div class="col-md-12 text-right">
                                     <a href="https://github.com/chrisharrington" target="_blank">
                                         <i class="fa fa-github-square"></i>
                                     </a>
@@ -56,7 +59,7 @@
         
         <div class="container posts">
             <div class="row">
-                <div class="col-sm-<?php echo (get_post_type() == 'page' ? '12' : '9'); ?>">
+                <div class="col-md-<?php echo (get_post_type() == 'page' ? '12' : '9'); ?>">
                     <?php
                     if (have_posts()) {
                         while (have_posts()) {
@@ -102,7 +105,7 @@
                     ?>
                 </div>
                 
-                <div class="<?php echo get_post_type() == 'page' ? 'hidden' : 'col-sm-3'; ?>">
+                <div class="<?php echo get_post_type() == 'page' ? 'hidden' : 'col-md-3'; ?>">
                     <div class="tags padding-15 small-font lower-case box-sizing pull-left full-width">
                         <h3 class="spacing-bottom-10 upper-case">Tags</h3>
                         <?php
@@ -119,7 +122,7 @@
             </div>
             
             <div class="row spacing-top-15">
-                <div class="col-sm-12">
+                <div class="col-md-12">
                     
                 </div>
             </div>

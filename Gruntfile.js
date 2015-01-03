@@ -50,6 +50,6 @@ module.exports = function(grunt) {
         }
     });
     
-    grunt.registerTask("watch", ["browserify", "less", "watch"]);
+    grunt.registerTask("default", ["browserify", "less", "watch"]);
     grunt.registerTask("prod", ["browserify", "uglify", "less"]);
 };

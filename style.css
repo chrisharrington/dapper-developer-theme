@@ -3075,6 +3075,12 @@ hr {
 }
 
 
+body {
+  font-family: "Open Sans";
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
 h1,
 h2,
 h3,
@@ -3086,18 +3092,24 @@ h6 {
 }
 h1,
 h2 {
-  line-height: 49px;
+  font-size: 27px;
+  line-height: 30px;
   color: #276cba;
   font-family: "Roboto Condensed";
   letter-spacing: -1px;
   text-transform: uppercase;
-  font-size: 35px;
 }
 h2 {
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 0px;
   text-transform: none;
   color: black;
+}
+h3 {
+  font-size: 16px;
+}
+h4 {
+  font-size: 14px;
 }
 h5 {
   color: #999999;
@@ -3133,26 +3145,37 @@ button:active {
   -moz-box-shadow: none;
   box-shadow: none;
 }
+a {
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 38px;
+    line-height: 49px;
+  }
+  div.post h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  body {
+    font-size: 16px;
+  }
+}
 .hover-link:hover {
   background: #F0F0F0;
   text-decoration: none;
 }
 .hover:hover {
   background: #F0F0F0;
-}
-@media (min-width: 768px) {
-  h1 {
-    font-size: 42px;
-  }
-}
-body {
-  font-family: "Open Sans";
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
-}
-a {
-  cursor: pointer;
 }
 .border {
   border: solid 1px #EEE;
@@ -3206,16 +3229,15 @@ div.posts div.post {
   margin-bottom: 15px;
 }
 div.posts div.post h1 {
-  line-height: 49px;
+  line-height: 28px;
+  font-size: 24px;
   color: #276cba;
   font-family: "Roboto Condensed";
   letter-spacing: -1px;
   text-transform: uppercase;
-  font-size: 36px;
   margin-top: 8px;
 }
 div.posts div.post h2 {
-  font-size: 28px;
   letter-spacing: 0px;
   text-transform: none;
 }
