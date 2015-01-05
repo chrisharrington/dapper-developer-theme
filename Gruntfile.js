@@ -6,7 +6,8 @@ module.exports = function(grunt) {
             options: {
                 transform: [require("grunt-react").browserify],
                 browserifyOptions: {
-                    debug: true
+                    debug: true,
+                    paths: ["./node_modules", "./script/app"],
                 }
             },
             app: {

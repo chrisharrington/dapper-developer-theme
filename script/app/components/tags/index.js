@@ -29,7 +29,7 @@ module.exports = React.createClass({
     renderTag: function(tag) {
         return <a href={"?tag=" + tag.slug} key={tag.id} className="hover row block padding-top-5 padding-bottom-5">
             <div className="col-md-12">
-                <span className="pull-left bold">{tag.name}</span>
+                <span className="pull-left">{tag.name}</span>
                 <span className="pull-right light">{tag.count}</span>
             </div>
         </a>;           

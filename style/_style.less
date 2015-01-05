@@ -1,7 +1,7 @@
-.small-font {}
-@media (min-width:768px) {
-    .small-font { font-size:0.875em; }
-}
+@import "_mixins.less";
+
+.small-font { font-size:0.875em; }
+.tiny-font { font-size:0.75em; }
 
 .lower-case { text-transform:lowercase;
     * { text-transform:lowercase; }
@@ -17,3 +17,4 @@
 .light { color:#999; }
 .bold { font-weight:bold; }
 .block { display:block; }
+.rounded { .border-radius(50%); }

@@ -1,8 +1,8 @@
 var React = require("react"),
-    Widget = require("../widget"),
-    GitHub = require("../../controls/github"),
+    Widget = require("components/widget"),
+    GitHub = require("data/github"),
     _ = require("underscore"),
-    config = require("../../config"),
+    config = require("config"),
     moment = require("moment");
 
 module.exports = React.createClass({
@@ -37,11 +37,11 @@ module.exports = React.createClass({
             repos.push(<a href={repo.url} target="_blank" key={repo.id} className="row hover-link block">
                 <div className="col-md-12 padding-top-5 padding-bottom-5">
                     <div className="row">
-                        <div className="col-md-12 bold">{repo.name}</div>
+                        <div className="col-md-12">{repo.name}</div>
                     </div>
                     <div className="row light">
                         <div className="col-md-12">
-                            <i className="pull-left">{repo.date}</i>
+                            <i className="pull-left small-font">{repo.date}</i>
                             <div className="pull-right">
                                 <i className="fa fa-star"></i>
                                 <span className="spacing-left-3">{repo.starCount}</span>

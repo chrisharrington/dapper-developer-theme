@@ -3036,6 +3036,9 @@ hr {
 .padding-bottom-15 {
   padding-bottom: 15px;
 }
+.no-padding-left {
+  padding-left: 0;
+}
 .pull-right-sm,
 .pull-right-md {
   float: none;
@@ -3071,10 +3074,11 @@ hr {
   }
 }
 
-@media (min-width: 768px) {
-  .small-font {
-    font-size: 0.875em;
-  }
+.small-font {
+  font-size: 0.875em;
+}
+.tiny-font {
+  font-size: 0.75em;
 }
 .lower-case {
   text-transform: lowercase;
@@ -3109,6 +3113,14 @@ hr {
 }
 .block {
   display: block;
+}
+.rounded {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 
 
@@ -3324,4 +3336,15 @@ ul.pages li a {
   font-size: 0.875em;
   text-transform: uppercase;
   margin-left: 25px;
+}
+
+.twitter img {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
