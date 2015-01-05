@@ -4,13 +4,13 @@ var React = require("react");
 
 module.exports = React.createClass({
     renderImage: function(profile) {
-        return <div className="col-md-3">
+        return <div className="col-xs-2 col-md-3">
             <img src={profile.image} alt="profile-image" />
         </div>;
     },
     
     renderInfo: function(profile) {
-        return <div className="col-md-9 no-padding-left">
+        return <div className="col-xs-10 col-md-9 no-padding-left">
             <span className="bold">{profile.name}</span>
             <br />
             <a href={"https://twitter.com/" + profile.screenName} target="_blank" className="spacing-top-5 small-font">{profile.screenName}</a>

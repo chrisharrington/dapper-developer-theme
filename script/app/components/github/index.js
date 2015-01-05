@@ -41,7 +41,7 @@ module.exports = React.createClass({
                     </div>
                     <div className="row light">
                         <div className="col-md-12">
-                            <i className="pull-left small-font">{repo.date}</i>
+                            <span className="pull-left tiny-font">{repo.timeago}</span>
                             <div className="pull-right">
                                 <i className="fa fa-star"></i>
                                 <span className="spacing-left-3">{repo.starCount}</span>
@@ -55,7 +55,7 @@ module.exports = React.createClass({
     },
     
     render: function() {
-        return <Widget title="GitHub">
+        return <Widget title="GitHub" hidden={this.state.repos.length === 0}>
             {this.renderRepos(0, 5)}
             <div className={"more " + (this.state.moreVisible ? "" : "hidden")}>
                 {this.renderRepos(6)}

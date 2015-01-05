@@ -4,9 +4,27 @@ var React = require("react"),
     _ = require("underscore");
 
 module.exports = React.createClass({
-    renderTweets: function() {
-        return _.map(this.props.tweets, function(tweet) {
-            return <div className="light">
+    getInitialState: function() {
+        return {
+            moreVisible: false   
+        };
+    },
+    
+    toggleMore: function() {
+        this.setState({ moreVisible: !this.state.moreVisible });  
+    },
+    
+    renderTweets: function(start, end) {
+        var tweets = this.props.tweets;
+        if (tweets.length === 0)
+            return "";
+        
+        end = end || tweets.length;
+        
+        var rendered = [];
+        for (var i = start; i < end; i++) {
+            var tweet = tweets[i];
+            rendered.push(<div className="light">
                 <div className="row">
                     <div className="col-md-12" dangerouslySetInnerHTML={{ __html: tweet.html }}></div>
                 </div>
@@ -21,13 +39,20 @@ module.exports = React.createClass({
                         </div>
                     </div>
                 </div>
-            </div>;
-        });
+            </div>);
+        }
+        return rendered;
     },
     
     render: function() {
         return <div>
-            {this.renderTweets()}
+            {this.renderTweets(0, 5)}
+            <div className={"more " + (this.state.moreVisible ? "" : "hidden")}>
+                {this.renderTweets(6)}
+            </div>
+            <div className="col-xs-12 text-right spacing-top-10">
+                <a onClick={this.toggleMore}>{(this.state.moreVisible ? "less" : "more") + "..."}</a>
+            </div>
         </div>;
     }
 });
