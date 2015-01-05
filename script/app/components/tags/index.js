@@ -37,9 +37,9 @@ module.exports = React.createClass({
     
     render: function() {
         return <Widget title="Tags">
-            {this.renderTags(0, 5)}
+            {this.renderTags(0, 8)}
             <div className={"more" + (this.state.moreVisible ? "" : " hidden")}>
-                {this.renderTags(6)}
+                {this.renderTags(9)}
             </div>
             <div className="row">
                 <div className="col-md-12 text-right spacing-top-10">

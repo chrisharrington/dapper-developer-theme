@@ -1,6 +1,4 @@
 var qwest = require("qwest"),
-    mapper = require("./mapper"),
-    sorter = require("./sorter"),
     cache = require("../cache"),
     
     moment = require("moment");
