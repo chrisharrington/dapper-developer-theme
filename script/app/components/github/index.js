@@ -32,25 +32,8 @@ module.exports = React.createClass({
         end = end || this.state.repos.length-1;
         
         var repos = [];
-        for (var i = start; i < end; i++) {
-            var repo = this.state.repos[i];
-            repos.push(<a href={repo.url} target="_blank" key={repo.id} className="row hover-link block">
-                <div className="col-md-12 padding-top-5 padding-bottom-5">
-                    <div className="row">
-                        <div className="col-md-12">{repo.name}</div>
-                    </div>
-                    <div className="row light">
-                        <div className="col-md-12">
-                            <span className="pull-left tiny-font">{repo.timeago}</span>
-                            <div className="pull-right">
-                                <i className="fa fa-star"></i>
-                                <span className="spacing-left-3">{repo.starCount}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>);
-        }
+        for (var i = start; i < end; i++) 
+            repos.push(this.renderRepo(this.state.repos[i]));
         return repos;
     },
     
@@ -66,5 +49,33 @@ module.exports = React.createClass({
                 </div>
             </div>
         </Widget>;
+    },
+                       
+    renderRepo: function(repo) {
+        return <a href={repo.url} target="_blank" key={repo.id} className="row hover-link block">
+            <div className="col-md-12 padding-top-5 padding-bottom-5">
+                {this.renderRepoName(repo.name)}
+                {this.renderRepoInfo(repo)}
+            </div>
+        </a>;
+    },
+                                   
+    renderRepoName: function(name) {
+        return <div className="row">
+            <div className="col-md-12">{name}</div>
+        </div>;
+    },
+    
+    renderRepoInfo: function(repo) {
+        return <div className="row light">
+            <div className="col-md-12">
+                <span className="pull-left tiny-font">{moment(repo.date).fromNow()}</span>
+                <div className="pull-right">
+                    <i className="fa fa-star"></i>
+                    <span className="spacing-left-3">{repo.starCount}</span>
+                </div>
+            </div>
+        </div>;
     }
+
 });

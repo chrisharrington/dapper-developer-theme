@@ -1,7 +1,8 @@
 "use strict";
 
 var React = require("react"),
-    _ = require("underscore");
+    _ = require("underscore"),
+    moment = require("moment");
 
 module.exports = React.createClass({
     getInitialState: function() {
@@ -14,36 +15,6 @@ module.exports = React.createClass({
         this.setState({ moreVisible: !this.state.moreVisible });  
     },
     
-    renderTweets: function(start, end) {
-        var tweets = this.props.tweets;
-        if (tweets.length === 0)
-            return "";
-        
-        end = end || tweets.length;
-        
-        var rendered = [];
-        for (var i = start; i < end; i++) {
-            var tweet = tweets[i];
-            rendered.push(<div className="light">
-                <div className="row">
-                    <div className="col-md-12" dangerouslySetInnerHTML={{ __html: tweet.html }}></div>
-                </div>
-                <div className="row padding-bottom-15 border-bottom spacing-bottom-15">
-                    <div className="col-md-12 spacing-top-5">
-                        <span className="pull-left tiny-font spacing-top-3">{tweet.timeago}</span>
-                        <div className="pull-right">
-                            <i className="fa fa-retweet spacing-right-5"></i>
-                            <span className="spacing-right-15">{tweet.retweets}</span>
-                            <i className="fa fa-star spacing-right-5"></i>
-                            <span>{tweet.favourites}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>);
-        }
-        return rendered;
-    },
-    
     render: function() {
         return <div>
             {this.renderTweets(0, 5)}
@@ -54,5 +25,46 @@ module.exports = React.createClass({
                 <a onClick={this.toggleMore}>{(this.state.moreVisible ? "less" : "more") + "..."}</a>
             </div>
         </div>;
+    },
+    
+    renderTweets: function(start, end) {
+        var tweets = this.props.tweets;
+        if (tweets.length === 0)
+            return "";
+        
+        end = end || tweets.length;
+        
+        var rendered = [];
+        for (var i = start; i < end; i++) 
+            rendered.push(this.renderTweet(tweets[i]));
+        return rendered;
+    },
+                          
+    renderTweet: function(tweet) {
+        return <div className="light">
+            {this.renderTweetHtml(tweet)}
+            {this.renderTweetInfo(tweet)}
+        </div>;          
+    },
+            
+    renderTweetHtml: function(tweet) {
+        return <div className="row">
+            <div className="col-md-12" dangerouslySetInnerHTML={{ __html: tweet.html }}></div>
+        </div>;
+    },
+        
+    renderTweetInfo: function(tweet) {
+        return <div className="row padding-bottom-15 border-bottom spacing-bottom-15">
+            <div className="col-md-12 spacing-top-5">
+                <span className="pull-left tiny-font spacing-top-3">{moment(tweet.date, "dd MMM DD HH:mm:ss ZZ YYYY").fromNow()}</span>
+                <div className="pull-right">
+                    <i className="fa fa-retweet spacing-right-5"></i>
+                    <span className="spacing-right-15">{tweet.retweets}</span>
+                    <i className="fa fa-star spacing-right-5"></i>
+                    <span>{tweet.favourites}</span>
+                </div>
+            </div>
+        </div>;
     }
+
 });
