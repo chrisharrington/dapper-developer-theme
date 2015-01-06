@@ -1,9 +1,11 @@
+var moment = require("moment");
+
 module.exports = new function() {
     this._values = {};
     
     this.get = function(key) {
         var stored = JSON.parse(window.localStorage.getItem(key));
-        if (stored && new Date() > stored.expiry) {
+        if (stored && moment() > moment(stored.expiry)) {
             window.localStorage.removeItem(key);
             stored = undefined;
         }
@@ -17,7 +19,7 @@ module.exports = new function() {
         return stored ? promise : undefined;
     };
     
-    this.set = function(key, values, expiry) {
-        window.localStorage.setItem(key, JSON.stringify({ values: values, expiry: expiry }));
+    this.set = function(key, values) {
+        window.localStorage.setItem(key, JSON.stringify({ values: values, expiry: moment().add(15, "m") }));
     };
 };

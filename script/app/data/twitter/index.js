@@ -10,7 +10,7 @@ module.exports = function(serviceLocation) {
         return cache.get(CACHE_KEY) || qwest.get(serviceLocation + "twitter").then(function() {
             return JSON.parse(this.responseText);
         }).then(function(tweets) {
-            cache.set(CACHE_KEY, tweets, moment().add(1, "hour").toDate());
+            cache.set(CACHE_KEY, tweets);
             return tweets;
         });
     };
