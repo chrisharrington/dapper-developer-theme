@@ -1,25 +1,68 @@
-.spacing-top-3 { margin-top:3px; }
-.spacing-top-5 { margin-top:5px; }
-.spacing-top-10 { margin-top:10px; }
-.spacing-top-15 { margin-top:15px; }
+@import "_mixins.less";
 
-.spacing-bottom-10 { margin-bottom:10px; }
-.spacing-bottom-15 { margin-bottom:15px; }
+@sizes: 2, 3, 5, 10, 15;
 
-.spacing-left-3 { margin-left:3px; }
-
-.spacing-right-5 { margin-right:5px; }
-.spacing-right-15 { margin-right:15px; }
-
-.padding-2 { padding:2px; }
-.padding-5 { padding:5px; }
-.padding-15 { padding:15px; }
-.wide-padding-5 { padding:5px 10px; }
-
-.padding-top-5 { padding-top:5px; }
-
-.padding-bottom-5 { padding-bottom:5px; }
-.padding-bottom-15 { padding-bottom:15px; }
+.for(@sizes); .-each(@value) {
+    .spacing- {
+        &@{value} {
+            margin: @value px;   
+        }
+    }
+    
+    .spacing-top- {
+        &@{value} {
+            margin: @value px;   
+        }
+    }
+    
+    .spacing-right- {
+        &@{value} {
+            margin: @value px;   
+        }
+    }
+    
+    .spacing-bottom- {
+        &@{value} {
+            margin: @value px;   
+        }
+    }
+    
+    .spacing-left- {
+        &@{value} {
+            margin: @value px;   
+        }
+    }
+    
+    .padding- {
+        &@{value} {
+            padding: @value px;   
+        }
+    }
+    
+    .padding-top- {
+        &@{value} {
+            padding: @value px;   
+        }
+    }
+    
+    .padding-right- {
+        &@{value} {
+            padding: @value px;   
+        }
+    }
+    
+    .padding-bottom- {
+        &@{value} {
+            padding: @value px;   
+        }
+    }
+    
+    .padding-left- {
+        &@{value} {
+            padding: @value px;   
+        }
+    }
+}
 
 .no-padding-left { padding-left:0; }
 
