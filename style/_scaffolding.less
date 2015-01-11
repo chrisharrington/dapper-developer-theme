@@ -5,61 +5,61 @@
 .for(@sizes); .-each(@value) {
     .spacing- {
         &@{value} {
-            margin: @value px;   
+            margin: unit(@value, px);   
         }
     }
     
     .spacing-top- {
         &@{value} {
-            margin: @value px;   
+            margin-top: unit(@value, px);   
         }
     }
     
     .spacing-right- {
         &@{value} {
-            margin: @value px;   
+            margin-right: unit(@value, px);   
         }
     }
     
     .spacing-bottom- {
         &@{value} {
-            margin: @value px;   
+            margin-bottom: unit(@value, px);   
         }
     }
     
     .spacing-left- {
         &@{value} {
-            margin: @value px;   
+            margin-left: unit(@value, px);   
         }
     }
     
     .padding- {
         &@{value} {
-            padding: @value px;   
+            padding: unit(@value, px);   
         }
     }
     
     .padding-top- {
         &@{value} {
-            padding: @value px;   
+            padding-top: unit(@value, px);   
         }
     }
     
     .padding-right- {
         &@{value} {
-            padding: @value px;   
+            padding-right: unit(@value, px);   
         }
     }
     
     .padding-bottom- {
         &@{value} {
-            padding: @value px;   
+            padding-bottom: unit(@value, px);   
         }
     }
     
     .padding-left- {
         &@{value} {
-            padding: @value px;   
+            padding-left: unit(@value, px);   
         }
     }
 }
