@@ -3666,7 +3666,6 @@ ul.pages li a {
 .twitter div.profile > div.profile-image {
   float: left;
   width: 40px;
-  padding-right: 15px;
   height: 40px;
 }
 .twitter div.profile > div.profile-image > img {
@@ -3677,5 +3676,5 @@ ul.pages li a {
   float: left;
   width: 100%;
   margin-left: -40px;
-  padding-left: 40px;
+  padding-left: 50px;
 }

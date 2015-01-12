@@ -19,9 +19,11 @@ module.exports = React.createClass({
 
     render: function() {
         var profile = this.props.profile;
-        return <div className="row padding-bottom-15 border-bottom spacing-bottom-15 profile">
-            {this.renderImage(profile)}
-            {this.renderInfo(profile)}
+        return <div className="row padding-bottom-15 border-bottom spacing-bottom-15">
+            <div className="col-xs-12 profile">
+                {this.renderImage(profile)}
+                {this.renderInfo(profile)}
+            </div>
         </div>;
     }
 });
