@@ -4,13 +4,13 @@ var React = require("react");
 
 module.exports = React.createClass({
     renderImage: function(profile) {
-        return <div className="col-xs-2 col-md-3">
+        return <div className="profile-image">
             <img src={profile.image} alt="profile-image" />
         </div>;
     },
     
     renderInfo: function(profile) {
-        return <div className="col-xs-10 col-md-9 no-padding-left">
+        return <div className="profile-info">
             <span className="bold">{profile.name}</span>
             <br />
             <a href={"https://twitter.com/" + profile.screenName} target="_blank" className="spacing-top-5 small-font">{profile.screenName}</a>
@@ -19,7 +19,7 @@ module.exports = React.createClass({
 
     render: function() {
         var profile = this.props.profile;
-        return <div className="row padding-bottom-15 border-bottom spacing-bottom-15">
+        return <div className="row padding-bottom-15 border-bottom spacing-bottom-15 profile">
             {this.renderImage(profile)}
             {this.renderInfo(profile)}
         </div>;

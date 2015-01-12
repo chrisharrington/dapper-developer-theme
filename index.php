@@ -17,7 +17,7 @@
         <script src="<?php bloginfo('template_url'); ?>/script/app.js"></script>
     </head>
     <body>
-        <div class="container-fluid header">
+        <div class="container-fluid header no-horizontal-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
