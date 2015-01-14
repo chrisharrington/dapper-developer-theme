@@ -1890,13 +1890,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
   text-decoration: none;
-}
-a:hover,
-a:focus {
-  color: #23527c;
-  text-decoration: underline;
 }
 a:focus {
   outline: thin dotted;
@@ -3447,7 +3441,7 @@ h1,
 h2 {
   font-size: 26px;
   line-height: 30px;
-  color: #276cba;
+  color: #20a12f;
   font-family: "Oswald";
   text-transform: uppercase;
 }
@@ -3475,12 +3469,12 @@ p:last-child {
   margin-bottom: 0 !important;
 }
 button {
-  background-color: #276cba;
-  background: -webkit-gradient(linear, left top, left bottom, from(#276cba), to(#3d82d1));
-  background: -webkit-linear-gradient(top, #276cba, #3d82d1);
-  background: -moz-linear-gradient(top, #276cba, #3d82d1);
-  background: -ms-linear-gradient(top, #276cba, #3d82d1);
-  background: -o-linear-gradient(top, #276cba, #3d82d1);
+  background-color: #187623;
+  background: -webkit-gradient(linear, left top, left bottom, from(#187623), to(#20a12f));
+  background: -webkit-linear-gradient(top, #187623, #20a12f);
+  background: -moz-linear-gradient(top, #187623, #20a12f);
+  background: -ms-linear-gradient(top, #187623, #20a12f);
+  background: -o-linear-gradient(top, #187623, #20a12f);
   color: white;
   padding: 5px 20px;
   border: none;
@@ -3503,6 +3497,7 @@ button:active {
 }
 a {
   cursor: pointer;
+  color: #20a12f;
 }
 @media (min-width: 768px) {
   h1 {
@@ -3541,7 +3536,7 @@ div.header a.logo:hover {
 }
 div.header h1,
 div.header i {
-  color: #3d82d1;
+  color: #20a12f;
 }
 div.header h5 {
   color: #cccccc;
@@ -3552,7 +3547,7 @@ div.header i {
   cursor: pointer;
 }
 div.header i:hover {
-  color: #669ddb;
+  color: #28cc3b;
 }
 div.posts {
   margin-top: 15px;
@@ -3563,7 +3558,7 @@ div.posts div.post {
   margin-bottom: 15px;
 }
 div.posts div.post h1 {
-  color: #276cba;
+  color: #187623;
   text-transform: uppercase;
   margin-top: 8px;
 }
