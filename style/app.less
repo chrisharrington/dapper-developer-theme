@@ -4,13 +4,13 @@
 
 body { font-family:"Open Sans"; font-size:15px; padding:0; margin:0; }
 
-h1, h2, h3, h4, h5, h6 { margin:0; padding:0; }
+h1, h2, h3, h4, h5, h6 { margin:0; padding:0; font-weight:normal; }
 
-h1, h2 { font-size:27px; line-height:30px; color:@dark-header-colour; font-family:"Roboto Condensed"; letter-spacing:-1px; text-transform:uppercase; }
-div.post h1 { line-height:28px; font-size:24px; }
-h2 { font-size:20px; letter-spacing:0px; text-transform:none; color:black; }
-h3 { font-size:16px; }
-h4 { font-size:14px; }
+h1, h2 { font-size:26px; line-height:30px; color:@dark-header-colour; font-family:"Oswald"; text-transform:uppercase; }
+div.post h1 { line-height:27px; font-size:23px; }
+h2 { font-size:19px; letter-spacing:0px; text-transform:none; color:black; }
+h3 { font-size:17px; }
+h4 { font-size:15px; }
 h5 { color:@dark-subheader-colour; font-weight:normal; }
 p:last-child { margin-bottom:0 !important; }
 button { .gradient(@dark-header-colour, @light-header-colour); color:white; padding:5px 20px; border:none; .box-shadow(0 2px 8px rgba(100, 100, 100, 0.4)); font-size:14px; outline:none !important; .border-radius(3px);
@@ -38,21 +38,21 @@ div.header { .gradient(#333, #111); padding-top:10px; padding-bottom:10px;
 
 div.posts { margin-top:15px;
     div.post { padding-bottom:15px; border-bottom:solid 1px #DDD; margin-bottom:15px;
-        h1 { color:@dark-header-colour; font-family:"Roboto Condensed"; letter-spacing:-1px; text-transform:uppercase; margin-top:8px; }
+        h1 { color:@dark-header-colour; text-transform:uppercase; margin-top:8px; }
         h2 { letter-spacing:0px; text-transform:none; margin-top:10px; }
         h5 { color:@dark-subheader-colour; font-weight:normal; }
-        
+
         div.info { color:#909090; font-size:12px;
             div.tags, div.comments {
                 i { margin-right:5px; }
                 a { text-transform:lowercase; }
             }
         }
-        
+
         p { color:#555; }
 
         pre { background:#F0F0F0; padding:10px; font-size:0.875em; }
-        
+
         p, h1, h2, h3, h4, h5, h6 { margin:15px 0 0 0; }
     }
 }
