@@ -122,8 +122,10 @@
                     }
                     ?>
 
-                    <?php dapper_disqus_embed("dapperdeveloper"); ?>
-                    <script src="//dapperdeveloper.disqus.com/embed.js"></script>
+					<?php if (is_single()): ?>
+						<?php dapper_disqus_embed("dapperdeveloper"); ?>
+						<script src="//dapperdeveloper.disqus.com/embed.js"></script>
+					<?php endif; ?>
                 </div>
 
                 <div class="<?php echo get_post_type() == 'page' ? 'hidden' : 'col-md-3'; ?>">
