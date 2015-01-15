@@ -3650,6 +3650,18 @@ div.posts div.post {
   border-bottom: solid 1px #DDD;
   margin-bottom: 15px;
 }
+div.posts div.post h1,
+div.posts div.post h2,
+div.posts div.post h3,
+div.posts div.post h4,
+div.posts div.post h5,
+div.posts div.post h6 {
+  margin: 30px 0 0 0;
+}
+div.posts div.post p,
+div.posts div.post pre {
+  margin: 15px 0 0 0;
+}
 div.posts div.post h1 {
   color: #20a12f;
   text-transform: uppercase;
@@ -3679,17 +3691,8 @@ div.posts div.post div.info div.comments a {
 div.posts div.post p {
   color: #555;
 }
-div.posts div.post h1,
-div.posts div.post h2,
-div.posts div.post h3,
-div.posts div.post h4,
-div.posts div.post h5,
-div.posts div.post h6 {
-  margin: 30px 0 0 0;
-}
-div.posts div.post p,
 div.posts div.post pre {
-  margin: 15px 0 0 0;
+  word-wrap: normal;
 }
 div.add-comment .avatar {
   -webkit-border-radius: 3px;
