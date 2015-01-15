@@ -3499,6 +3499,9 @@ a {
   cursor: pointer;
   color: #20a12f;
 }
+pre.prettyprint {
+  border: none !important;
+}
 @media (min-width: 768px) {
   h1 {
     font-size: 38px;
