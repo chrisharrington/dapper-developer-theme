@@ -16,7 +16,6 @@
         </script>
         <script src="<?php bloginfo('template_url'); ?>/script/app.js"></script>
         <script src="//platform.twitter.com/widgets.js"></script>
-        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
