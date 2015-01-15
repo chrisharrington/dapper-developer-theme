@@ -114,7 +114,7 @@
                                 </div>
                                 <?php endif; ?>
 
-                                <a href="index.php?p=<?php the_ID(); ?>"><h1><?php the_title(); ?></h1></a>
+                                <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
                                 <?php the_content("Continue reading <i class='fa fa-long-arrow-right'></i>"); ?>
                             </div>
 
