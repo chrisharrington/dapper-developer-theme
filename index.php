@@ -5,6 +5,8 @@
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<title>The Dapper Developer</title>
+		
         <link href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 
