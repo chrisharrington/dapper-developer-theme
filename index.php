@@ -7,7 +7,7 @@
 
 		<title>The Dapper Developer</title>
 		
-        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700">
+        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico?v=2" />
@@ -36,7 +36,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <a href="index.php" class="logo">
+                        <a href="<?php echo get_home_url(); ?>" class="logo">
                             <h1><?php echo get_bloginfo('name'); ?></h1>
                             <h5><?php echo get_bloginfo('description'); ?></h5>
                         </a>
