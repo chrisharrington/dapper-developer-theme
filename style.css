@@ -3665,12 +3665,13 @@ div.posts div.post pre {
 div.posts div.post h1 {
   color: #20a12f;
   text-transform: uppercase;
+}
+div.posts div.post a > h1 {
   margin-top: 8px;
 }
 div.posts div.post h2 {
   letter-spacing: 0px;
   text-transform: none;
-  margin-top: 10px;
 }
 div.posts div.post h5 {
   color: #999999;
