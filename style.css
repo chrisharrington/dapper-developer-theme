@@ -3697,8 +3697,7 @@ div.posts div.post pre {
 }
 div.posts div.post pre code {
   word-wrap: normal;
-  font-family: Inconsolata;
-  font-size: 1em;
+  font-size: 14px;
 }
 div.add-comment .avatar {
   -webkit-border-radius: 3px;
