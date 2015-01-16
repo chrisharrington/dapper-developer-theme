@@ -36,7 +36,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <a href="index.php" class="logo">
+                        <a href="<?php echo get_home_url(); ?>" class="logo">
                             <h1><?php echo get_bloginfo('name'); ?></h1>
                             <h5><?php echo get_bloginfo('description'); ?></h5>
                         </a>
