@@ -7,7 +7,7 @@
 
 		<title>The Dapper Developer</title>
 		
-        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700">
+        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />

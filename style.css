@@ -3693,7 +3693,12 @@ div.posts div.post p {
   color: #555;
 }
 div.posts div.post pre {
+  font-size: 1em;
+}
+div.posts div.post pre code {
   word-wrap: normal;
+  font-family: Inconsolata;
+  font-size: 1em;
 }
 div.add-comment .avatar {
   -webkit-border-radius: 3px;
