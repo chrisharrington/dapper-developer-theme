@@ -20,7 +20,8 @@
 					$recentPosts = array();
 					foreach (wp_get_recent_posts(array("numberposts" => 10)) as $post) {
 						array_push($recentPosts, array(
-							name => $post["post_title"],
+							id => $post["ID"],
+							title => $post["post_title"],
 							authour => $post["post_author"],
 							date => $post["post_date"]
 						));
@@ -153,6 +154,7 @@
                             echo $html;
                         ?>
                     </div>
+					<div id="recent-posts"></div>
                     <div id="tags" class="lower-case"></div>
                     <div id="github"></div>
                     <div id="twitter"></div>

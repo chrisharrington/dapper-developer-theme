@@ -3,17 +3,31 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         browserify: {
-            options: {
-                transform: [require("grunt-react").browserify],
-                browserifyOptions: {
-                    debug: true,
-                    paths: ["./node_modules", "./script/app"],
-                }
-            },
-            app: {
-                src: ["script/vendor/**/*.js", "script/app/**/*.js", "script/app/**/*.jsx"],
-                dest: "script/app.js"
-            }
+			run: {
+				src: ["script/vendor/**/*.js", "script/app/**/*.js", "script/app/**/*.jsx"],
+				dest: "script/app.js",
+				options: {
+					transform: [require("grunt-react").browserify],
+					browserifyOptions: {
+						debug: true,
+						paths: ["./node_modules", "./script/app"],
+					}
+				}
+			},
+			
+			watch: {
+				src: ["script/vendor/**/*.js", "script/app/**/*.js", "script/app/**/*.jsx"],
+				dest: "script/app.js",
+				options: {
+					transform: [require("grunt-react").browserify],
+					browserifyOptions: {
+						debug: true,
+						paths: ["./node_modules", "./script/app"],
+					},
+					watch: true,
+					keepAlive: true
+				}
+			}
         },
         
         uglify: {
@@ -35,7 +49,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ["script/app/**/*.js", "script/app/**/*.jsx"],
-                tasks: ["browserify"],
+                tasks: ["browserify:run"],
                 options: {
                     spawn: false
                 }
