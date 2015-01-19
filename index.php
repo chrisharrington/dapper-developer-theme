@@ -15,7 +15,18 @@
         <script>
             var wordpress = {
                 postType: "<?php echo get_post_type() ?>",
-                tags: JSON.parse('<? echo json_encode(get_tags()) ?>')
+                tags: JSON.parse('<? echo json_encode(get_tags()) ?>'),
+				recentPosts: <?php
+					$recentPosts = array();
+					foreach (wp_get_recent_posts(array("numberposts" => 10)) as $post) {
+						array_push($recentPosts, array(
+							name => $post["post_title"],
+							authour => $post["post_author"],
+							date => $post["post_date"]
+						));
+					}
+					echo json_encode($recentPosts);
+				?>
             };
         </script>
         <script src="<?php bloginfo('template_url'); ?>/script/app.js"></script>
