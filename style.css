@@ -3231,6 +3231,36 @@ pre .regexp {
 .padding-left-15 {
   padding-left: 15px;
 }
+.spacing-30 {
+  margin: 30px;
+}
+.spacing-top-30 {
+  margin-top: 30px;
+}
+.spacing-right-30 {
+  margin-right: 30px;
+}
+.spacing-bottom-30 {
+  margin-bottom: 30px;
+}
+.spacing-left-30 {
+  margin-left: 30px;
+}
+.padding-30 {
+  padding: 30px;
+}
+.padding-top-30 {
+  padding-top: 30px;
+}
+.padding-right-30 {
+  padding-right: 30px;
+}
+.padding-bottom-30 {
+  padding-bottom: 30px;
+}
+.padding-left-30 {
+  padding-left: 30px;
+}
 .no-horizontal-padding {
   padding-left: 0;
   padding-right: 0;
@@ -3476,6 +3506,36 @@ pre .regexp {
 .padding-left-15 {
   padding-left: 15px;
 }
+.spacing-30 {
+  margin: 30px;
+}
+.spacing-top-30 {
+  margin-top: 30px;
+}
+.spacing-right-30 {
+  margin-right: 30px;
+}
+.spacing-bottom-30 {
+  margin-bottom: 30px;
+}
+.spacing-left-30 {
+  margin-left: 30px;
+}
+.padding-30 {
+  padding: 30px;
+}
+.padding-top-30 {
+  padding-top: 30px;
+}
+.padding-right-30 {
+  padding-right: 30px;
+}
+.padding-bottom-30 {
+  padding-bottom: 30px;
+}
+.padding-left-30 {
+  padding-left: 30px;
+}
 .no-horizontal-padding {
   padding-left: 0;
   padding-right: 0;
@@ -3550,9 +3610,11 @@ h2 {
 }
 h3 {
   font-size: 17px;
+  text-transform: uppercase;
 }
 h4 {
   font-size: 15px;
+  font-weight: bold;
 }
 h5 {
   color: #999999;
@@ -3602,7 +3664,7 @@ a {
     line-height: 40px;
   }
   h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
   h3 {
     font-size: 22px;
@@ -3650,6 +3712,10 @@ div.posts div.post {
   border-bottom: solid 1px #DDD;
   margin-bottom: 15px;
 }
+div.posts div.post p,
+div.posts div.post pre {
+  margin: 15px 0 0 0;
+}
 div.posts div.post h1,
 div.posts div.post h2,
 div.posts div.post h3,
@@ -3658,9 +3724,13 @@ div.posts div.post h5,
 div.posts div.post h6 {
   margin: 30px 0 0 0;
 }
-div.posts div.post p,
-div.posts div.post pre {
-  margin: 15px 0 0 0;
+div.posts div.post h1 + h2,
+div.posts div.post h2 + h3,
+div.posts div.post h3 + h4,
+div.posts div.post h4 + h5,
+div.posts div.post h5 + h6,
+div.posts div.post p + div {
+  margin-top: 15px;
 }
 div.posts div.post h1 {
   color: #20a12f;
@@ -3670,8 +3740,7 @@ div.posts div.post a > h1 {
   margin-top: 8px;
 }
 div.posts div.post h2 {
-  letter-spacing: 0px;
-  text-transform: none;
+  text-transform: uppercase;
 }
 div.posts div.post h5 {
   color: #999999;
@@ -3698,6 +3767,7 @@ div.posts div.post pre {
 div.posts div.post pre code {
   word-wrap: normal;
   font-size: 14px;
+  font-family: Inconsolata;
 }
 div.add-comment .avatar {
   -webkit-border-radius: 3px;

@@ -15,7 +15,7 @@
         <script>
             var wordpress = {
                 postType: "<?php echo get_post_type() ?>",
-                tags: JSON.parse('<? echo json_encode(get_tags('orderby=count&order=DESC')) ?>')
+                tags: JSON.parse('<? echo json_encode(get_tags()) ?>')
             };
         </script>
         <script src="<?php bloginfo('template_url'); ?>/script/app.js"></script>

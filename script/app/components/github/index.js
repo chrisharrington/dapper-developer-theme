@@ -29,7 +29,7 @@ module.exports = React.createClass({
             return "";
         
         var counter = start;
-        end = end || this.state.repos.length-1;
+        end = end || this.state.repos.length;
         
         var repos = [];
         for (var i = start; i < end; i++) 

@@ -12,13 +12,21 @@ module.exports = React.createClass({
     toggleMore: function() {
         this.setState({ moreVisible: !this.state.moreVisible });  
     },
+	
+	sortTags: function(tags) {
+		return tags.sort(function(first, second) {
+			if (first.count !== second.count)
+				return first.count > second.count ? -1 : 1;
+			return first.name > second.name ? 1 : -1;
+		});
+	},
     
     renderTags: function(start, end) {
-        var tags = this.props.tags;
+        var tags = this.sortTags(this.props.tags);
         if (tags.length === 0)
             return "";
             
-        end = end || tags.length-1;
+        end = end || tags.length;
         
         var rendered = [];
         for (var i = start; i < end; i++)
