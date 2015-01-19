@@ -23,7 +23,7 @@
 							id => $post["ID"],
 							title => $post["post_title"],
 							authour => $post["post_author"],
-							date => $post["post_date"]
+							date => $post["post_date_gmt"]
 						));
 					}
 					echo json_encode($recentPosts);

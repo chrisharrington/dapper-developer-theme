@@ -2,15 +2,17 @@
 var React = require("react"),
     Tags = require("./components/tags"),
     GitHub = require("./components/github"),
-    Twitter = require("./components/twitter");
+    Twitter = require("./components/twitter"),
+	RecentPosts = require("./components/recent-posts");
 
 document.addEventListener("DOMContentLoaded", function () {
+	React.render(React.createElement(RecentPosts, {posts: wordpress.recentPosts}), document.getElementById("recent-posts"));
     React.render(React.createElement(Tags, {tags: wordpress.tags}), document.getElementById("tags"));
     React.render(React.createElement(GitHub, null), document.getElementById("github"));
     React.render(React.createElement(Twitter, null), document.getElementById("twitter"));
 });
 
-},{"./components/github":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/github/index.js","./components/tags":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/tags/index.js","./components/twitter":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/twitter/index.js","react":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/react/react.js"}],"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"./components/github":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/github/index.js","./components/recent-posts":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/recent-posts/index.js","./components/tags":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/tags/index.js","./components/twitter":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/twitter/index.js","react":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/react/react.js"}],"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -23198,7 +23200,7 @@ module.exports = React.createClass({displayName: "exports",
             return "";
         
         var counter = start;
-        end = end || this.state.repos.length-1;
+        end = end || this.state.repos.length;
         
         var repos = [];
         for (var i = start; i < end; i++) 
@@ -23248,7 +23250,35 @@ module.exports = React.createClass({displayName: "exports",
     }
 
 });
-},{"components/widget":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/widget/index.js","config":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/config.js","data/github":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/data/github/index.js","moment":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/moment/moment.js","react":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/react/react.js","underscore":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/underscore/underscore.js"}],"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/tags/index.js":[function(require,module,exports){
+},{"components/widget":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/widget/index.js","config":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/config.js","data/github":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/data/github/index.js","moment":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/moment/moment.js","react":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/react/react.js","underscore":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/underscore/underscore.js"}],"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/recent-posts/index.js":[function(require,module,exports){
+"use strict";
+
+var React = require("react"),
+	Widget = require("components/widget"),
+	_ = require("underscore");
+
+module.exports = React.createClass({displayName: "exports",
+	renderPosts: function() {
+		return _.map(this.props.posts, function(post) {
+			return this.renderPost(post);
+		}.bind(this));
+	},
+	
+	renderPost: function(post) {
+		return React.createElement("div", {"data-key": post.id, className: "row spacing-top-5"}, 
+			React.createElement("div", {className: "col-xs-12"}, 
+				React.createElement("h5", {className: "secondary-colour bold upper-case"}, post.title)
+			)
+		);
+	},
+	
+	render: function() {
+		return React.createElement(Widget, {title: "Recent Articles"}, 
+			this.renderPosts()
+		)
+	}
+});
+},{"components/widget":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/widget/index.js","react":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/react/react.js","underscore":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/underscore/underscore.js"}],"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/components/tags/index.js":[function(require,module,exports){
 var React = require("react"),
     Widget = require("../widget"),
     _ = require("underscore");
@@ -23263,13 +23293,21 @@ module.exports = React.createClass({displayName: "exports",
     toggleMore: function() {
         this.setState({ moreVisible: !this.state.moreVisible });  
     },
+	
+	sortTags: function(tags) {
+		return tags.sort(function(first, second) {
+			if (first.count !== second.count)
+				return first.count > second.count ? -1 : 1;
+			return first.name > second.name ? 1 : -1;
+		});
+	},
     
     renderTags: function(start, end) {
-        var tags = this.props.tags;
+        var tags = this.sortTags(this.props.tags);
         if (tags.length === 0)
             return "";
             
-        end = end || tags.length-1;
+        end = end || tags.length;
         
         var rendered = [];
         for (var i = start; i < end; i++)
@@ -23433,9 +23471,10 @@ module.exports = React.createClass({displayName: "exports",
 
 },{"react":"/Users/charrington/Code/wordpress/wp-content/themes/dapper/node_modules/react/react.js"}],"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/config.js":[function(require,module,exports){
 module.exports = {
-    //serviceLocation: "http://130.211.172.19:8081/"
-    serviceLocation: "http://localhost:8081/"
+    serviceLocation: "http://130.211.172.19:8081/"
+    //serviceLocation: "http://localhost:8081/"
 };
+
 },{}],"/Users/charrington/Code/wordpress/wp-content/themes/dapper/script/app/data/cache/index.js":[function(require,module,exports){
 var moment = require("moment");
 

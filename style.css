@@ -3351,6 +3351,9 @@ pre .regexp {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+.secondary-colour {
+  color: #20a12f;
+}
 
 
 .break-letter {

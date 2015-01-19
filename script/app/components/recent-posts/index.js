@@ -2,7 +2,8 @@
 
 var React = require("react"),
 	Widget = require("components/widget"),
-	_ = require("underscore");
+	_ = require("underscore"),
+	moment = require("moment");
 
 module.exports = React.createClass({
 	renderPosts: function() {
@@ -12,10 +13,11 @@ module.exports = React.createClass({
 	},
 	
 	renderPost: function(post) {
-		return <div data-key={post.id} className="row spacing-top-5">
-			<div className="col-xs-12">
+		return <div data-key={post.id} className="row">
+			<a className="col-xs-12 hover padding-top-10 padding-bottom-10">
 				<h5 className="secondary-colour bold upper-case">{post.title}</h5>
-			</div>
+				<span className="pull-left tiny-font light">{moment.utc(post.date).fromNow()}</span>
+			</a>
 		</div>;
 	},
 	
