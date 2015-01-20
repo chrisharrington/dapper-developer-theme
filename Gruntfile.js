@@ -47,14 +47,6 @@ module.exports = function(grunt) {
         },
         
         watch: {
-            scripts: {
-                files: ["script/app/**/*.js", "script/app/**/*.jsx"],
-                tasks: ["browserify:run"],
-                options: {
-                    spawn: false
-                }
-            },
-            
             styles: {
                 files: ["style/**/*.less", "style/**/*.css"],
                 tasks: ["less"],
@@ -62,9 +54,19 @@ module.exports = function(grunt) {
                     spawn: false
                 }
             }
-        }
+        },
+		
+		concurrent: {
+			watch: {
+				tasks: ["watch", "browserify:watch"],
+				options: {
+					logConcurrentOutput: true	
+				}
+			}
+		}
     });
     
-    grunt.registerTask("default", ["browserify", "less", "watch"]);
+    grunt.registerTask("default", ["browserify:run", "less", "watch"]);
+	grunt.registerTask("build", ["less", "concurrent:watch"]);
     grunt.registerTask("prod", ["browserify", "uglify", "less"]);
 };
