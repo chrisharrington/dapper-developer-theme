@@ -7,11 +7,10 @@
 
 		<title>The Dapper Developer</title>
 		
-        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata">
+        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico?v=5" />
-		
         <script>
             var wordpress = {
                 postType: "<?php echo get_post_type() ?>",
@@ -21,6 +20,7 @@
 					foreach (wp_get_recent_posts(array("numberposts" => 10)) as $post) {
 						array_push($recentPosts, array(
 							id => $post["ID"],
+							permalink => get_permalink($post["ID"]),
 							title => $post["post_title"],
 							authour => $post["post_author"],
 							date => $post["post_date_gmt"]

@@ -3657,6 +3657,18 @@ a {
   cursor: pointer;
   color: #20a12f;
 }
+code {
+  font-size: 1em;
+}
+pre > code {
+  font-size: 13px;
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
+.gist {
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
 @media (min-width: 768px) {
   h1 {
     font-size: 38px;

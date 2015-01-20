@@ -14,7 +14,7 @@ module.exports = React.createClass({
 	
 	renderPost: function(post) {
 		return <div data-key={post.id} className="row">
-			<a className="col-xs-12 hover padding-top-10 padding-bottom-10">
+			<a href={post.permalink} className="col-xs-12 hover padding-top-10 padding-bottom-10">
 				<h5 className="secondary-colour bold upper-case">{post.title}</h5>
 				<span className="pull-left tiny-font light">{moment.utc(post.date).fromNow()}</span>
 			</a>
