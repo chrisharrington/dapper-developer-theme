@@ -4,10 +4,24 @@
     <head>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); } else { echo 'The Dapper Developer - coding and top hats.'; }?>" />
+		<meta name="title" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_title() ) ) ) . ' - The Dapper Developer'; } else { echo 'The Dapper Developer'; } ?>" />
+		<meta name="description" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); } ?>" />
 
-		<title>The Dapper Developer</title>
+		<?php if (is_single()): ?>
+		<meta name="og:title" content="<?php echo the_title(); ?>" />
+		<meta name="og:type" content="article" />
+		<meta name="og:url" content="<?php echo the_permalink(); ?>" />
+		<meta name="og:description" content="<?php echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); ?>" />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:url" content="<?php echo the_permalink(); ?>" />
+		<meta name="twitter:title" content="<?php echo the_title(); ?>" />
+		<meta name="twitter:description" content="<?php echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); ?>" />
+		<?php endif; ?>
 		
+		<title><?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_title() ) ) ) . ' - The Dapper Developer'; } else { echo 'The Dapper Developer'; }?></title>
+		
+		<link rel=”author” href="https://plus.google.com/+ChrisHarrington" />
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 
