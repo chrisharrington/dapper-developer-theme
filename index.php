@@ -8,6 +8,11 @@
 		<meta name="description" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); } ?>" />
 
 		<?php if (is_single()): ?>
+		<meta itemprop="name" content="<?php echo the_title(); ?>" />
+		<meta itemprop="description" content="<?php echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); ?>" />
+		<meta itemprop="author" content="Chris Harrington" />
+		<meta itemprop="datePublished" content="<?php echo the_time( get_option( 'date_format' ) ); ?>" />
+		
 		<meta name="og:title" content="<?php echo the_title(); ?>" />
 		<meta name="og:type" content="article" />
 		<meta name="og:url" content="<?php echo the_permalink(); ?>" />
