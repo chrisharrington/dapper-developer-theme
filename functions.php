@@ -11,4 +11,6 @@ function dapper_disqus_embed($disqus_shortname) {
     </script>';
 }
 
+add_theme_support('post-thumbnails');
+
 ?>

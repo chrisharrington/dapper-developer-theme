@@ -22,6 +22,13 @@
 		<meta name="twitter:url" content="<?php echo the_permalink(); ?>" />
 		<meta name="twitter:title" content="<?php echo the_title(); ?>" />
 		<meta name="twitter:description" content="<?php echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); ?>" />
+		
+		<?php if (has_post_thumbnail()): ?>
+		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ) )[0]; ?>
+		<meta name="twitter:image" content="<?php echo $image; ?>" />
+		<meta name="og:image" content="<?php echo $image; ?>" />
+		<meta itemprop="image" content="<?php echo $image; ?>" />
+		<?php endif; ?>
 		<?php endif; ?>
 		
 		<title><?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_title() ) ) ) . ' - The Dapper Developer'; } else { echo 'The Dapper Developer'; }?></title>
