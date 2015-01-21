@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); } else { echo 'The Dapper Developer - coding and top hats.'; }?>" />
 
 		<title>The Dapper Developer</title>
 		
