@@ -17,11 +17,11 @@
 		<meta name="twitter:url" content="<?php echo the_permalink(); ?>" />
 		<meta name="twitter:title" content="<?php echo the_title(); ?>" />
 		<meta name="twitter:description" content="<?php echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); ?>" />
+		<meta name="twitter:image" content="<?php echo get_stylesheet_directory_uri(); ?>/logo.png" />
 		<?php endif; ?>
 		
 		<title><?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_title() ) ) ) . ' - The Dapper Developer'; } else { echo 'The Dapper Developer'; }?></title>
 		
-		<link rel=”author” href="https://plus.google.com/+ChrisHarrington" />
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 
