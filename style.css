@@ -3726,6 +3726,7 @@ div.posts div.post {
   padding-bottom: 15px;
   border-bottom: solid 1px #DDD;
   margin-bottom: 15px;
+  font-size: 15px;
 }
 div.posts div.post p,
 div.posts div.post pre {
