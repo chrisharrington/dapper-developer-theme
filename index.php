@@ -100,7 +100,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <ul class="pages pull-right">
+                                    <ul class="pages pull-right spacing-0 spacing-top-10">
                                         <?php
                                         $html = "";
                                         foreach (get_pages() as $page) {
