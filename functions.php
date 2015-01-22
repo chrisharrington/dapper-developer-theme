@@ -11,18 +11,24 @@ function dapper_disqus_embed($disqus_shortname) {
     </script>';
 }
 
-//[html]
-function escape_html( $atts, $content ){
-	return esc_html($content);
-}
-add_shortcode( 'html', 'escape_html' );
+//[code language="the language"]
+function code( $atts, $content) {
+	$a = shortcode_atts( array(
+        'language' => ''
+    ), $atts );
+	
+	$language = $a["language"];
+	if ($language == "html")
+		$content = esc_html($content);
 
-//[foobar]
-function foobar_func( $atts ){
-	return "foo and bar";
+	return "<pre><code data-language=" . $language . ">" . str_replace("<p>", '', trim($content)) . "</code></pre>";
 }
-add_shortcode( 'foobar', 'foobar_func' );
+add_shortcode( "code", "code" );
 
 add_theme_support('post-thumbnails');
+
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 99);
+add_filter( 'the_content', 'shortcode_unautop',100 );
 
 ?>
