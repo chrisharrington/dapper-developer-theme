@@ -11,6 +11,18 @@ function dapper_disqus_embed($disqus_shortname) {
     </script>';
 }
 
+//[html]
+function escape_html( $atts, $content ){
+	return esc_html($content);
+}
+add_shortcode( 'html', 'escape_html' );
+
+//[foobar]
+function foobar_func( $atts ){
+	return "foo and bar";
+}
+add_shortcode( 'foobar', 'foobar_func' );
+
 add_theme_support('post-thumbnails');
 
 ?>
