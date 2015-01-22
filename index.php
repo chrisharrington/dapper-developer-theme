@@ -33,11 +33,7 @@
 		
 		<title><?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_title() ) ) ) . ' - The Dapper Developer'; } else { echo 'The Dapper Developer'; }?></title>
 		
-        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
-        <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
-
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico?v=5" />
-        <script>
+		<script>
             var wordpress = {
                 postType: "<?php echo get_post_type() ?>",
                 tags: JSON.parse('<? echo json_encode(get_tags()) ?>'),
@@ -56,9 +52,6 @@
 				?>
             };
         </script>
-        <script src="<?php bloginfo('template_url'); ?>/script/app.js"></script>
-        <script src="//platform.twitter.com/widgets.js"></script>
-		
 		<?php if (getenv("ENVIRONMENT") != "development"): ?>
         <script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -71,6 +64,11 @@
 			ga('send', 'pageview');
         </script>
 		<?php endif; ?>
+		
+        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
+        <link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
+
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico?v=5" />
     </head>
     <body>
         <div class="container-fluid header no-horizontal-padding">
@@ -196,5 +194,8 @@
                 </div>
             </div>
         </div>
+		
+		<script src="<?php bloginfo('template_url'); ?>/script/app.js"></script>
+        <script src="//platform.twitter.com/widgets.js"></script>
     </body>
 </html>
