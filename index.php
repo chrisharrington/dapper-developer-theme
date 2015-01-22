@@ -35,6 +35,8 @@
 		
 		<script>
             var wordpress = {
+				permalink: "<?php echo the_permalink(); ?>",
+				title: "<?php echo the_title(); ?>",
                 postType: "<?php echo get_post_type() ?>",
                 tags: JSON.parse('<? echo json_encode(get_tags()) ?>'),
 				recentPosts: <?php
@@ -64,9 +66,6 @@
 			ga('send', 'pageview');
         </script>
 		<?php endif; ?>
-		
-		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-		<script type="text/javascript">stLight.options({publisher: "089e0b2c-3067-4f65-a9a3-a0b9c90c3c0c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 		
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/built/style.css" />
@@ -169,9 +168,7 @@
                                 </div>
 								<?php if (is_single()): ?>
 								<div class="row spacing-top-10">
-									<div class="col-xs-12">
-										<div id="share-to-twitter"></div>
-									</div>
+									<div class="col-xs-12" id="share"></div>
 								</div>
 								<?php endif; ?>
                                 <?php endif; ?>
