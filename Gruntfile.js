@@ -4,8 +4,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
         browserify: {
 			dev: {
-				src: "script/app/init.js",
-				dest: "script/app.js",
+				src: ["script/vendor/**/*.js", "script/app/init.js"],
+				dest: "built/script.js",
 				options: {
 					transform: [require("grunt-react").browserify],
 					browserifyOptions: {
@@ -16,8 +16,8 @@ module.exports = function(grunt) {
 			},
 			
 			prod: {
-				src: "script/app/init.js",
-				dest: "script/app.js",
+				src: ["script/vendor/**/*.js", "script/app/init.js"],
+				dest: "built/script.js",
 				options: {
 					transform: [require("grunt-react").browserify],
 					browserifyOptions: {
@@ -27,8 +27,8 @@ module.exports = function(grunt) {
 			},
 			
 			watch: {
-				src: ["script/vendor/**/*.js", "script/app/**/*.js", "script/app/**/*.jsx"],
-				dest: "script/app.js",
+				src: ["script/vendor/**/*.js", "script/app/init.js"],
+				dest: "built/app.js",
 				options: {
 					transform: [require("grunt-react").browserify],
 					browserifyOptions: {
@@ -44,20 +44,15 @@ module.exports = function(grunt) {
         uglify: {
             prod: {
                 files: {
-                    "script/app.js": ["script/app.js"]
+                    "built/script.js": ["built/script.js"]
                 }
-            },
-			options: {
-				mangle: true,
-				compress: true,
-				preserveComments: false
-			}
+            }
         },
         
         less: {
             all: {
 				files: {
-					"style.min.css": ["style/**/*.css", "style/**/*.less"]
+					"built/style.css": ["style/**/*.css", "style/**/*.less"]
 				},
 				options: {
 					compress: true,
@@ -69,8 +64,8 @@ module.exports = function(grunt) {
 		cssmin: {
 			prod: {
 				files: [{
-					src: "style.css",
-					dest: "style.min.css"
+					src: "built/style.css",
+					dest: "built/style.css"
 				}],
 				options: {
 					keepSpecialComments: 0	
