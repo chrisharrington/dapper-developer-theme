@@ -42,25 +42,46 @@ module.exports = function(grunt) {
         },
         
         uglify: {
-            target: {
+            prod: {
                 files: {
                     "script/app.js": ["script/app.js"]
                 }
-            }
+            },
+			options: {
+				mangle: true,
+				compress: true,
+				preserveComments: false
+			}
         },
         
         less: {
-            development: {
-               files: {
-                    "style.css": ["style/**/*.css", "style/**/*.less"]
-                }
-            }
+            all: {
+				files: {
+					"style.min.css": ["style/**/*.css", "style/**/*.less"]
+				},
+				options: {
+					compress: true,
+					yuicompress: true
+				}
+			}
         },
-        
+		
+		cssmin: {
+			prod: {
+				files: [{
+					src: "style.css",
+					dest: "style.min.css"
+				}],
+				options: {
+					keepSpecialComments: 0	
+				}
+			}
+		},
+		
         watch: {
             styles: {
                 files: ["style/**/*.less", "style/**/*.css"],
-                tasks: ["less"],
+                tasks: ["less:dev"],
                 options: {
                     spawn: false
                 }
@@ -77,6 +98,6 @@ module.exports = function(grunt) {
 		}
     });
     
-    grunt.registerTask("default", ["less", "concurrent"]);
-    grunt.registerTask("prod", ["browserify:prod", "uglify", "less"]);
+    grunt.registerTask("default", ["less:dev", "concurrent"]);
+    grunt.registerTask("prod", ["browserify:prod", "uglify:prod", "less", "cssmin:prod" ]);
 };
