@@ -76,7 +76,7 @@ module.exports = function(grunt) {
         watch: {
             styles: {
                 files: ["style/**/*.less", "style/**/*.css"],
-                tasks: ["less:dev"],
+                tasks: ["less"],
                 options: {
                     spawn: false
                 }
@@ -93,6 +93,6 @@ module.exports = function(grunt) {
 		}
     });
     
-    grunt.registerTask("default", ["less:dev", "concurrent"]);
+    grunt.registerTask("default", ["less", "concurrent"]);
     grunt.registerTask("prod", ["browserify:prod", "uglify:prod", "less", "cssmin:prod" ]);
 };

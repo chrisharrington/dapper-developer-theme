@@ -65,12 +65,25 @@
         </script>
 		<?php endif; ?>
 		
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">stLight.options({publisher: "089e0b2c-3067-4f65-a9a3-a0b9c90c3c0c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+		
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/built/style.css" />
 
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico?v=5" />
     </head>
     <body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+		
         <div class="container-fluid header no-horizontal-padding">
             <div class="container">
                 <div class="row">
@@ -154,6 +167,13 @@
                                         </div>
                                     </div>
                                 </div>
+								<?php if (is_single()): ?>
+								<div class="row spacing-top-10">
+									<div class="col-xs-12">
+										<div id="share-to-twitter"></div>
+									</div>
+								</div>
+								<?php endif; ?>
                                 <?php endif; ?>
 
                                 <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
@@ -185,12 +205,6 @@
                     <div id="tags" class="lower-case"></div>
                     <div id="github"></div>
                     <div id="twitter"></div>
-                </div>
-            </div>
-
-            <div class="row spacing-top-15">
-                <div class="col-md-12">
-
                 </div>
             </div>
         </div>
