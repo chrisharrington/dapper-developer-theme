@@ -78,5 +78,5 @@ module.exports = function(grunt) {
     });
     
     grunt.registerTask("default", ["less", "concurrent"]);
-    grunt.registerTask("prod", ["browserify:run", "uglify", "less"]);
+    grunt.registerTask("prod", ["browserify:prod", "uglify", "less"]);
 };
