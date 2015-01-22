@@ -3,14 +3,25 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         browserify: {
-			run: {
-				src: ["script/vendor/**/*.js", "script/app/**/*.js", "script/app/**/*.jsx"],
+			dev: {
+				src: "script/app/init.js",
 				dest: "script/app.js",
 				options: {
 					transform: [require("grunt-react").browserify],
 					browserifyOptions: {
 						debug: true,
-						paths: ["./node_modules", "./script/app"],
+						paths: ["./script/app"],
+					}
+				}
+			},
+			
+			prod: {
+				src: "script/app/init.js",
+				dest: "script/app.js",
+				options: {
+					transform: [require("grunt-react").browserify],
+					browserifyOptions: {
+						paths: ["./script/app"],
 					}
 				}
 			},

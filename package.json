@@ -26,14 +26,12 @@
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-react": "^0.10.0",
-    "gulp": "^3.8.10",
     "jit-grunt": "~0.7.0",
     "moment": "^2.8.4",
     "qwest": "^1.5.1",
     "react": "^0.12.2",
     "reactify": "^0.17.1",
     "underscore": "^1.7.0",
-    "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.2.1"
   }
 }
