@@ -35,6 +35,7 @@
 		
 		<script>
             var wordpress = {
+				directory: "<?php bloginfo('template_url'); ?>",
 				permalink: "<?php echo the_permalink(); ?>",
 				title: "<?php echo the_title(); ?>",
                 postType: "<?php echo get_post_type() ?>",

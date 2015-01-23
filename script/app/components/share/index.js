@@ -14,22 +14,30 @@ module.exports = React.createClass({
 	},
 	
 	facebook: function() {
-		Popup.centre("https://www.facebook.com/dialog/share?app_id=" + config.facebook.appId + "&display=popup&href=" + wordpress.permalink + "&redirect_uri=" + wordpress.permalink, "facebook", {
+		Popup.centre("https://www.facebook.com/dialog/share?app_id=" + config.facebook.appId + "&display=popup&href=" + this.props.permalink + "&redirect_uri=" + this.props.permalink, "facebook", {
 			width: 600,
 			height: 400
 		});
 	},
 	
 	googleplus: function() {
-		Popup.centre("https://plus.google.com/share?url=" + wordpress.permalink, "googleplus", {
+		Popup.centre("https://plus.google.com/share?url=" + this.props.permalink, "googleplus", {
 			width: 510,
 			height: 420
 		});
 	},
 	
 	linkedin: function() {
-		Popup.centre("https://www.linkedin.com/cws/share?url=" + wordpress.permalink, "linkedin", {
-			
+		Popup.centre("https://www.linkedin.com/cws/share?url=" + this.props.permalink, "linkedin", {
+			width: 600,
+			height: 400
+		});
+	},
+	
+	reddit: function() {
+		Popup.centre("http://www.reddit.com/submit?url=" + this.props.permalink + "&title=" + this.props.title, "reddit", {
+			width: 600,
+			height: 300
 		});
 	},
 	
