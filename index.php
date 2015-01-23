@@ -67,8 +67,6 @@
         </script>
 		<?php endif; ?>
 		
-		
-		
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/built/style.css" />
 
