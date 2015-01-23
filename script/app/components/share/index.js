@@ -14,15 +14,15 @@ module.exports = React.createClass({
 	},
 	
 	facebook: function() {
-//		Popup.centre("https://www.facebook.com/dialog/share?app_id=" + config.facebook.appId + "&display=popup&href=http://dapperdeveloper.com&redirect_uri=http://dapperdeveloper.com", "facebook", {
-//			width: 600,
-//			height: 300
-//		});
+		Popup.centre("https://www.facebook.com/dialog/share?app_id=" + config.facebook.appId + "&display=popup&href=" + wordpress.permalink + "&redirect_uri=" + wordpress.permalink, "facebook", {
+			width: 600,
+			height: 300
+		});
 		
-		FB.ui({
-		  method: "share",
-		  href: wordpress.permalink,
-		}, function(response){});
+//		FB.ui({
+//		  method: "share",
+//		  href: wordpress.permalink,
+//		}, function(response){});
 	},
 	
 	render: function() {
