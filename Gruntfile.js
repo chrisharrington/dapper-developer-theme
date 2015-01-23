@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 			
 			watch: {
 				src: ["script/vendor/**/*.js", "script/app/init.js"],
-				dest: "built/app.js",
+				dest: "built/script.js",
 				options: {
 					transform: [require("grunt-react").browserify],
 					browserifyOptions: {

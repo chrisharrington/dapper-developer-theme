@@ -67,6 +67,24 @@
         </script>
 		<?php endif; ?>
 		
+		<script>
+		  window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : '1412237962402533',
+			  xfbml      : true,
+			  version    : 'v2.2'
+			});
+		  };
+
+		  (function(d, s, id){
+			 var js, fjs = d.getElementsByTagName(s)[0];
+			 if (d.getElementById(id)) {return;}
+			 js = d.createElement(s); js.id = id;
+			 js.src = "//connect.facebook.net/en_US/sdk.js";
+			 fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+		
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700">
         <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/built/style.css" />
 
