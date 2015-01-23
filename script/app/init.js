@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
     React.render(<GitHub />, document.getElementById("github"));
 	React.render(<Twitter />, document.getElementById("twitter"));
 	
-	var share = <Share title={wordpress.title} permalink={wordpress.permalink} />;
-    React.render(share, document.getElementById("share-top"));
-	React.render(share, document.getElementById("share-bottom"));
+	if (document.getElementById("share-top")) {
+		var share = <Share title={wordpress.title} permalink={wordpress.permalink} />;
+		React.render(share, document.getElementById("share-top"));
+		React.render(share, document.getElementById("share-bottom"));
+	}
 });
