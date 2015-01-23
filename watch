@@ -1,1 +1,0 @@
-NODE_PATH=script/app watchify -t reactify script/app/init.js -o built/script.js -v
