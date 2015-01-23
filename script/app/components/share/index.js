@@ -27,11 +27,18 @@ module.exports = React.createClass({
 		});
 	},
 	
+	linkedin: function() {
+		Popup.centre("https://www.linkedin.com/cws/share?url=" + wordpress.permalink, "linkedin", {
+			
+		});
+	},
+	
 	render: function() {
 		return <div>
 			<a className="fa fa-twitter share-base share-twitter" onClick={this.twitter}></a>
 			<a className="fa fa-facebook share-base share-facebook spacing-left-5" onClick={this.facebook}></a>
 			<a className="fa fa-google-plus share-base share-google-plus spacing-left-5" onClick={this.googleplus}></a>
+			<a className="fa fa-linkedin share-base share-linked-in spacing-left-5" onClick={this.linkedin}></a>
 		</div>;
 	}
 });
