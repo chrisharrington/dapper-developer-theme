@@ -8,5 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	React.render(<RecentPosts posts={wordpress.recentPosts} />, document.getElementById("recent-posts"));
     React.render(<Tags tags={wordpress.tags} />, document.getElementById("tags"));
     React.render(<GitHub />, document.getElementById("github"));
-    React.render(<Share title={wordpress.title} permalink={wordpress.permalink} />, document.getElementById("share"));
+	
+	var share = <Share title={wordpress.title} permalink={wordpress.permalink} />;
+    React.render(share, document.getElementById("share-top"));
+	React.render(share, document.getElementById("share-bottom"));
 });

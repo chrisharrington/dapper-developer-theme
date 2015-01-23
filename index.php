@@ -169,13 +169,17 @@
                                 </div>
 								<?php if (is_single()): ?>
 								<div class="row spacing-top-10">
-									<div class="col-xs-12" id="share"></div>
+									<div class="col-xs-12" id="share-top"></div>
 								</div>
 								<?php endif; ?>
                                 <?php endif; ?>
 
                                 <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
                                 <?php the_content("Continue reading <i class='fa fa-long-arrow-right'></i>"); ?>
+								
+								<div class="row spacing-top-10">
+									<div class="col-xs-12" id="share-bottom"></div>
+								</div>
                             </div>
 
                         <?php }

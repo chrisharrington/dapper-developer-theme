@@ -34,13 +34,6 @@ module.exports = React.createClass({
 		});
 	},
 	
-	reddit: function() {
-		Popup.centre("http://www.reddit.com/submit?url=" + this.props.permalink + "&title=" + this.props.title, "reddit", {
-			width: 600,
-			height: 300
-		});
-	},
-	
 	render: function() {
 		return <div>
 			<a className="fa fa-twitter share-base share-twitter" onClick={this.twitter}></a>
