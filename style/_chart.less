@@ -1,0 +1,30 @@
+@import "_mixins.less";
+
+@first:rgb(47, 99, 207);
+@second:rgb(222, 55, 0);
+@third:rgb(255, 154, 0);
+@fourth:rgb(0, 152, 2);
+
+.chart-container { .border-radius(3px); background:#F8F8F8; border:solid 1px #CCC; font-family:"Open Sans";
+	.ct-series.ct-series-a .ct-bar { stroke:@first; }
+	.ct-series.ct-series-b .ct-bar { stroke:@second; }
+	.ct-series.ct-series-c .ct-bar { stroke:@third; }
+	.ct-series.ct-series-d .ct-bar { stroke:@fourth; }
+	
+	.ct-bar { stroke-width:5px; }
+	
+	@media (min-width: 600px) {
+		.ct-bar { stroke-width:10px; }	
+	}
+	
+	.ct-label.ct-vertical, .ct-label.ct-horizontal { color:black; font-size:9px; }
+	
+	.legend {
+		.legend-square { width:12px; height:12px; margin-top:2px;
+			&.square-1 { background:@first; }
+			&.square-2 { background:@second; }
+			&.square-3 { background:@third; }
+			&.square-4 { background:@fourth; }
+		}
+	}
+}

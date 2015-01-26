@@ -3,7 +3,10 @@ var React = require("react"),
     GitHub = require("./components/github"),
 	RecentPosts = require("./components/recent-posts"),
 	Twitter = require("components/twitter"),
-	Share = require("components/share");
+	Share = require("components/share"),
+	Chart = require("components/chart"),
+	
+	_ = require("underscore");
 
 document.addEventListener("DOMContentLoaded", function () {
 	React.render(<RecentPosts posts={wordpress.recentPosts} />, document.getElementById("recent-posts"));
@@ -11,9 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
     React.render(<GitHub />, document.getElementById("github"));
 	React.render(<Twitter />, document.getElementById("twitter"));
 	
+	_renderCharts();
+	
 	if (document.getElementById("share-top")) {
 		var share = <Share title={wordpress.title} permalink={wordpress.permalink} />;
 		React.render(share, document.getElementById("share-top"));
 		React.render(share, document.getElementById("share-bottom"));
 	}
 });
+
+function _renderCharts() {
+	_.each(document.querySelectorAll("div.chart-container"), function(container) {
+		var json = JSON.parse(container.querySelector("script").innerHTML), options = {};
+		React.render(<Chart data={json.data} options={json.options} title={json.title} subtitle={json.subtitle} legend={json.legend} />, container);
+	});
+}

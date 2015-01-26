@@ -1,65 +1,65 @@
 @import "_mixins.less";
 
-@sizes: 0, 2, 3, 5, 10, 15, 30;
+@sizes: 0, 2, 3, 5, 10, 15, 20, 30;
 
 .for(@sizes); .-each(@value) {
     .spacing- {
         &@{value} {
-            margin: unit(@value, px);   
+            margin: unit(@value, px) !important;   
         }
     }
     
     .spacing-top- {
         &@{value} {
-            margin-top: unit(@value, px);   
+            margin-top: unit(@value, px) !important;
         }
     }
     
     .spacing-right- {
         &@{value} {
-            margin-right: unit(@value, px);   
+            margin-right: unit(@value, px) !important;   
         }
     }
     
     .spacing-bottom- {
         &@{value} {
-            margin-bottom: unit(@value, px);   
+            margin-bottom: unit(@value, px) !important;
         }
     }
     
     .spacing-left- {
         &@{value} {
-            margin-left: unit(@value, px);   
+            margin-left: unit(@value, px) !important;   
         }
     }
     
     .padding- {
         &@{value} {
-            padding: unit(@value, px);   
+            padding: unit(@value, px) !important;   
         }
     }
     
     .padding-top- {
         &@{value} {
-            padding-top: unit(@value, px);   
+            padding-top: unit(@value, px) !important;   
         }
     }
     
     .padding-right- {
         &@{value} {
-            padding-right: unit(@value, px);   
+            padding-right: unit(@value, px) !important;   
         }
     }
     
     .padding-bottom- {
         &@{value} {
-            padding-bottom: unit(@value, px);   
+            padding-bottom: unit(@value, px) !important;   
         }
     }
     
     .padding-left- {
         &@{value} {
-            padding-left: unit(@value, px);   
+            padding-left: unit(@value, px) !important;   
         }
     }
 }

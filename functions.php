@@ -25,6 +25,18 @@ function code( $atts, $content) {
 }
 add_shortcode( "code", "code" );
 
+function chart($atts, $content) {
+	return "<div class='chart-container'><script type='application/json'>" . str_replace("<p>", '', trim(removesmartquotes($content))) . "</script></div>";
+}
+add_shortcode("chart", "chart");
+
+function removesmartquotes($content) {
+	$content = str_replace('&#8220;', '"', $content);
+	$content = str_replace('&#8221;', '"', $content);
+	$content = str_replace('&#8243;', '"', $content);
+	return $content;
+}
+
 add_theme_support('post-thumbnails');
 
 remove_filter( 'the_content', 'wpautop' );
