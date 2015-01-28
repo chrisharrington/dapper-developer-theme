@@ -72,7 +72,7 @@
 		<link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chartist/0.6.1/chartist.min.css" />
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/built/style.css" />
         
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico?v=5" />
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico?v=6" />
     </head>
     <body>
 		<div id="fb-root"></div>
