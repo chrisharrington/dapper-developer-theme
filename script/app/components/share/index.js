@@ -6,7 +6,12 @@ var React = require("react"),
 	config = require("config");
 
 module.exports = React.createClass({
+	event: function(label) {
+		ga("send", "event", "social", label);	
+	},
+	
 	twitter: function() {
+		this.event("twitter");
 		Popup.centre("https://twitter.com/intent/tweet?text=" + this.props.title + " " + this.props.permalink + " via @charrington99", "twitter", {
 			width: 600,
 			height: 300
@@ -14,6 +19,7 @@ module.exports = React.createClass({
 	},
 	
 	facebook: function() {
+		this.event("facebook");
 		Popup.centre("https://www.facebook.com/dialog/share?app_id=" + config.facebook.appId + "&display=popup&href=" + this.props.permalink + "&redirect_uri=" + this.props.permalink, "facebook", {
 			width: 600,
 			height: 400
@@ -21,6 +27,7 @@ module.exports = React.createClass({
 	},
 	
 	googleplus: function() {
+		this.event("googleplus");
 		Popup.centre("https://plus.google.com/share?url=" + this.props.permalink, "googleplus", {
 			width: 510,
 			height: 420
@@ -28,6 +35,7 @@ module.exports = React.createClass({
 	},
 	
 	linkedin: function() {
+		this.event("linkedin");
 		Popup.centre("https://www.linkedin.com/cws/share?url=" + this.props.permalink, "linkedin", {
 			width: 600,
 			height: 400
