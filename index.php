@@ -169,7 +169,7 @@
                                     </div>
                                 </div>
 								<?php if (is_single()): ?>
-								<div class="row spacing-top-10">
+								<div class="row spacing-top-2 spacing-bottom-20">
 									<div class="col-xs-12" id="share-top"></div>
 								</div>
 								<?php endif; ?>
