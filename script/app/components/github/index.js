@@ -55,7 +55,7 @@ module.exports = React.createClass({
         return <a href={repo.url} target="_blank" key={repo.id} className="row hover-link block">
             <div className="col-md-12 padding-top-5 padding-bottom-5">
 				<div className="pull-left">
-					<h5 className="secondary-colour bold upper-case pull-left">{repo.name}</h5>
+					<h5 className="secondary-colour pull-left">{repo.name}</h5>
 					<br />
 					<span className="pull-left tiny-font light">{moment(repo.date).fromNow()}</span>
 				</div>
