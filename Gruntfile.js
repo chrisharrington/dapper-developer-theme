@@ -50,16 +50,9 @@ module.exports = function(grunt) {
         },
         
         less: {
-			dev: {
+            all: {
 				files: {
-					"built/style.css": ["style/**/*.css", "style/**/*.less", "!style/vendor/fonts.css"],
-					"built/fonts.css": ["style/vendor/fonts.css"]
-				}
-			},
-            prod: {
-				files: {
-					"built/style.css": ["style/**/*.css", "style/**/*.less", "!style/vendor/fonts.css"],
-					"built/fonts.css": ["style/vendor/fonts.css"]
+					"built/style.css": ["style/**/*.css", "style/**/*.less"]
 				},
 				options: {
 					compress: true,
@@ -73,9 +66,6 @@ module.exports = function(grunt) {
 				files: [{
 					src: "built/style.css",
 					dest: "built/style.css"
-				}, {
-					src: "built/fonts.css",
-					dest: "built/fonts.css"
 				}],
 				options: {
 					keepSpecialComments: 0	
@@ -86,7 +76,7 @@ module.exports = function(grunt) {
         watch: {
             styles: {
                 files: ["style/**/*.less", "style/**/*.css"],
-                tasks: ["less:dev"],
+                tasks: ["less"],
                 options: {
                     spawn: false
                 }
@@ -103,6 +93,6 @@ module.exports = function(grunt) {
 		}
     });
     
-    grunt.registerTask("default", ["less:dev", "concurrent"]);
-    grunt.registerTask("prod", ["browserify:prod", "uglify:prod", "less:prod", "cssmin:prod" ]);
+    grunt.registerTask("default", ["less", "concurrent"]);
+    grunt.registerTask("prod", ["browserify:prod", "uglify:prod", "less", "cssmin:prod" ]);
 };
