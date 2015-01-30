@@ -55,6 +55,7 @@
 				?>
             };
         </script>
+		
 		<?php if (getenv("ENVIRONMENT") != "development"): ?>
         <script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -68,23 +69,12 @@
         </script>
 		<?php endif; ?>
 		
-        <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700" />
-		<link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chartist/0.6.1/chartist.min.css" />
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700|Inconsolata:400,700" />
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/built/style.css" />
         
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico?v=6" />
     </head>
     <body>
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-		</script>
-		
         <div class="container-fluid header no-horizontal-padding">
             <div class="container">
                 <div class="row">
@@ -189,7 +179,7 @@
 
 					<?php if (is_single()): ?>
 						<?php dapper_disqus_embed("dapperdeveloper"); ?>
-						<script src="//dapperdeveloper.disqus.com/embed.js"></script>
+						<script src="http://a.disquscdn.com/embed.js"></script>
 					<?php endif; ?>
                 </div>
 
@@ -213,6 +203,6 @@
         </div>
 		
 		<script src="<?php bloginfo('template_url'); ?>/built/script.js"></script>
-        <script src="//platform.twitter.com/widgets.js"></script>
+        <script src="https://platform.twitter.com/widgets.js"></script>
     </body>
 </html>
