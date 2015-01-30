@@ -3,6 +3,7 @@ var React = require("react"),
     
     Tweets = require("./tweets"),
     Profile = require("./profile"),
+	Widget = require("../widget"),
     
     config = require("../../config");
 
@@ -22,10 +23,9 @@ module.exports = React.createClass({
     },    
     
     render: function() {
-        return <div className="twitter spacing-bottom-15 small-font box-sizing pull-left full-width">
-            <h3 className="upper-case spacing-bottom-10">Twitter</h3>
-            <Profile profile={this.state.profile} />
-            <Tweets tweets={this.state.tweets} />
-        </div>;   
+		return <Widget title="Twitter" hidden={this.state.tweets.length === 0}>
+			<Profile profile={this.state.profile} />
+			<Tweets tweets={this.state.tweets} />
+        </Widget>;   
     }
 });
