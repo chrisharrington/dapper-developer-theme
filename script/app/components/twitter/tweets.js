@@ -16,7 +16,7 @@ module.exports = React.createClass({
     },
     
     render: function() {
-        return <div>
+        return <div className="small-font">
             {this.renderTweets(0, 5)}
             <div className={"more " + (this.state.moreVisible ? "" : "hidden")}>
                 {this.renderTweets(6)}
