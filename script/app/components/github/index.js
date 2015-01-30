@@ -55,7 +55,7 @@ module.exports = React.createClass({
         return <a href={repo.url} target="_blank" key={repo.id} className="row hover-link block">
             <div className="col-md-12 padding-top-5 padding-bottom-5">
 				<div className="pull-left">
-					<h5 className="secondary-colour bold upper-case pull-left">{repo.name}</h5>
+					<h5 className="secondary-colour pull-left">{repo.name}</h5>
 					<br />
 					<span className="pull-left tiny-font light">{moment(repo.date).fromNow()}</span>
 				</div>
@@ -66,24 +66,6 @@ module.exports = React.createClass({
                 
             </div>
         </a>;
-    },
-                                   
-    renderRepoName: function(name) {
-        return <div className="row">
-            <h5 className="secondary-colour bold upper-case pull-left col-md-12">{name}</h5>
-        </div>;
-    },
-    
-    renderRepoInfo: function(repo) {
-        return <div className="row light">
-            <div className="col-md-12">
-                <span className="pull-left tiny-font">{moment(repo.date).fromNow()}</span>
-                <div className="pull-right">
-                    <i className="fa fa-star"></i>
-                    <span className="spacing-left-3">{repo.starCount}</span>
-                </div>
-            </div>
-        </div>;
     }
 
 });
