@@ -212,7 +212,7 @@
                     <div id="tags" class="lower-case"></div>
                     <div id="github"></div>
                     <div id="twitter"></div>
-                    <div id="ads" class="spacing-top-15">
+                    <div id="ads" class="pull-left spacing-top-15">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         <!-- right-side-1 -->
                         <ins class="adsbygoogle"
