@@ -214,15 +214,14 @@
                     <div id="twitter"></div>
                     <div id="ads" class="pull-left spacing-top-15">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- right-side-1 -->
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-3512119169366978"
-                             data-ad-slot="1488916240"
-                             data-ad-format="auto"></ins>
-                        <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+						<!-- right-side -->
+						<ins class="adsbygoogle"
+							 style="display:inline-block;width:160px;height:600px"
+							 data-ad-client="ca-pub-3512119169366978"
+							 data-ad-slot="4302781840"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
                     </div>
                 </div>
             </div>
