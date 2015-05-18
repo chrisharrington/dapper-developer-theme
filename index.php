@@ -190,6 +190,19 @@
                         <?php }
                     }
                     ?>
+					
+					<div class="spacing-top-15 spacing-bottom-15">
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- bottom -->
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-3512119169366978"
+							 data-ad-slot="1862189446"
+							 data-ad-format="auto"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
 
 					<?php if (is_single()): ?>
 						<?php dapper_disqus_embed("dapperdeveloper"); ?>
