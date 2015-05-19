@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="title" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_title() ) ) ) . ' - The Dapper Developer'; } else { echo 'The Dapper Developer'; } ?>" />
 		<meta name="description" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); } ?>" />
+		<meta name="keywords" content="<?php if ( is_single() ) { spaced_tags(); } else { echo 'code javascript node how-to' } ?>" />
 
 		<?php if (is_single()): ?>
 		<meta itemprop="name" content="<?php echo the_title(); ?>" />

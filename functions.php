@@ -11,6 +11,15 @@ function dapper_disqus_embed($disqus_shortname) {
     </script>';
 }
 
+function spaced_tags() {
+	$tags = get_the_tags();
+	if ($tags) {
+	  foreach($tags as $tag) {
+		echo str_replace(' ', '-', $tag->name) . ' '; 
+	  }
+	}
+}
+
 //[code language="the language"]
 function code( $atts, $content) {
 	$a = shortcode_atts( array(
