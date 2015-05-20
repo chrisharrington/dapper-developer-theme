@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="title" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_title() ) ) ) . ' - The Dapper Developer'; } else { echo 'The Dapper Developer'; } ?>" />
 		<meta name="description" content="<?php if ( is_single() ) { echo htmlspecialchars( strip_tags( html_entity_decode( get_the_excerpt() ) ) ); } ?>" />
-		<meta name="keywords" content="<?php if ( is_single() ) { spaced_tags(); } ?>" />
+		<meta name="keywords" content="<?php if ( is_single() ) { spaced_tags(); } else { echo 'code javascript node'; } ?>" />
 
 		<?php if (is_single()): ?>
 		<meta itemprop="name" content="<?php echo the_title(); ?>" />
@@ -192,19 +192,6 @@
                     }
                     ?>
 					
-					<div class="spacing-top-15 spacing-bottom-15">
-						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- bottom -->
-						<ins class="adsbygoogle"
-							 style="display:block"
-							 data-ad-client="ca-pub-3512119169366978"
-							 data-ad-slot="1862189446"
-							 data-ad-format="auto"></ins>
-						<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
-					</div>
-
 					<?php if (is_single()): ?>
 						<?php dapper_disqus_embed("dapperdeveloper"); ?>
 						<script src="http://a.disquscdn.com/embed.js"></script>
@@ -222,21 +209,34 @@
                             echo $html;
                         ?>
                     </div>
-					<div id="recent-posts"></div>
-                    <div id="tags" class="lower-case"></div>
-                    <div id="github"></div>
-                    <div id="twitter"></div>
-                    <div id="ads" class="pull-left spacing-top-15">
+					<div id="recent-posts" class="pull-left"></div>
+					<div class="pull-left spacing-top-15 full-width">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- right-side -->
+						<!-- sidebar-1 -->
 						<ins class="adsbygoogle"
-							 style="display:inline-block;width:160px;height:600px"
+							 style="display:block"
 							 data-ad-client="ca-pub-3512119169366978"
-							 data-ad-slot="4302781840"></ins>
+							 data-ad-slot="5871756640"
+							 data-ad-format="auto"></ins>
 						<script>
 						(adsbygoogle = window.adsbygoogle || []).push({});
 						</script>
                     </div>
+                    <div id="tags" class="pull-left full-width lower-case spacing-top-15"></div>
+                    <div id="github" class="pull-left full-width"></div>
+                    <div id="twitter" class="pull-left full-width"></div>
+					<div class="pull-left spacing-top-15 full-width">
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- sidebar-2 -->
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-3512119169366978"
+							 data-ad-slot="7348489848"
+							 data-ad-format="auto"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
                 </div>
             </div>
         </div>
