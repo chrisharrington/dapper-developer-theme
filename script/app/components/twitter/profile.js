@@ -13,7 +13,7 @@ module.exports = React.createClass({
         return <div className="profile-info">
             <span className="bold">{profile.name}</span>
             <br />
-            <a href={"https://twitter.com/" + profile.screenName} target="_blank" className="spacing-top-5 small-font">{profile.screenName}</a>
+            <a href={"https://twitter.com/" + profile.screenName} target="_blank" className="spacing-top-5 small-font">@{profile.screenName}</a>
         </div>
     },
 
